@@ -25,7 +25,7 @@
 - The discovery of unknown vulnerabilities in software is **a challengeing problem**, which usually requires a considerable amount of **manual auditing and analysis work**.
 
 > In conclusion, the issue of this paper want to solve is about how to automatically detect taint-style vulnerabilities
-> 总的来说，这篇论文在解决`taint-style`类型漏洞自动化探测的问题。此类漏洞需要source点用户可控，且在传播到sensitive function 所在的sink点的路径上没有sanitization，且能够触发。这往往需要跨跃函数和API, 这种跨越式分析目前往往需要专家经验来辅助。 
+> 总的来说，这篇论文在解决`taint-style`类型漏洞自动化探测的问题。此类漏洞需要source点用户可控，且在传播到sink点的路径上没有sanitization。这往往需要跨跃函数和API, 这种跨越式分析目前往往需要专家经验来辅助。 
 
 ---
 
