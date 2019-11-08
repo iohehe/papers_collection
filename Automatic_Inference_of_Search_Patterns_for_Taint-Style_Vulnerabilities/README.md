@@ -69,12 +69,15 @@
 > 本文的工作依然基于`Code Property Graphs` 来实现。在`Joern`平台上进行扩展来解决`interprocedural analysis`这一难题。
 
 
-# Third
+# Third Extending Code Property Graphs for  Interprocedural Analysis
 
-Detail
+## A  Adding Post-Dominator Trees
 
 In order to extend code property graphs for **interprocedural analysis**, using [post-dominator trees](https://en.wikipedia.org/wiki/Dominator_(graph_theory))(后序支配树) to extend CPG to detect argument modifications.
 因为是探测调用关系，所以作者选择了后序的支配树，用来解决传统`CFG`上不好解决的传参问题。
 ![](https://tva1.sinaimg.cn/large/006y8mN6ly1g8pq7zrz6pj30ff0npq3a.jpg)
 
 - Now, the post-dominator trees work, we can use this detect function calls that `result in modification of their arguments`, 
+
+## B Detecting Argument Modification
+
