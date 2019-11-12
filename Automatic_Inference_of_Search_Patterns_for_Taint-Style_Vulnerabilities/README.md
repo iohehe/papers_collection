@@ -80,4 +80,9 @@ In order to extend code property graphs for **interprocedural analysis**, using 
 - Now, the post-dominator trees work, we can use this detect function calls that `result in modification of their arguments`, 
 
 ## B Detecting Argument Modification
-
+ when call a library function, the modification of a function's argumnets is unknown.
+ ![](https://tva1.sinaimg.cn/large/006y8mN6ly1g8vixunoj4j30aw0ay74a.jpg)
+ In figure3, 第二行声明了变量z但是没有初始化，他在第3和5行分别被boo和foo调用，而在boo调用的时候，他可能被初始化了，这种情形下boo参数就有了不确定性,因此制定了两个checks:
+ 1. 检查一个本地变量从声明，到传参的数据流图上没有值的改变（还没弄太清楚啥意思）
+ 2. 在向后支配树上，从调用处到声明处在数据流上看无直接关联的其他statements.
+ 
