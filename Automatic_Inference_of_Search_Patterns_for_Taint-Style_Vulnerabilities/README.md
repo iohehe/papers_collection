@@ -86,3 +86,9 @@ In order to extend code property graphs for **interprocedural analysis**, using 
  1. 检查一个本地变量从声明，到传参的数据流图上没有值的改变（还没弄太清楚啥意思）
  2. 在向后支配树上，从调用处到声明处在数据流上看无直接关联的其他statements.
  
+
+# C. Propagation of Data-Flow Information
+
+作者探测跨函数调用
+![](https://tva1.sinaimg.cn/large/006y8mN6ly1g8wpgj3quij30ed0b5aa8.jpg)
+这是两个函数之间的属性图（没有体现控制流图），主要是在描述数据流的传递，(这里有提出一篇System Dependence Graph XD)
