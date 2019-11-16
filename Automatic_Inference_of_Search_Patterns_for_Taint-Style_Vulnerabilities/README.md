@@ -103,3 +103,28 @@ In order to extend code property graphs for **interprocedural analysis**, using 
  4) Generation of graph traversals.
  
 ## A. Generation of definition graphs
+  我在漏洞挖掘的过程中也有同样的问题，就是如何理清函数调用关系，参数地定义与过滤都隐藏在一堆`unrelated code`中。缕这层关系是自动化分析漏洞的基础，这里需要构造出一张图。不光是包含函数调用关系，还有他们之间的参数传递、变化。 这个地方作者为了缕清这层关系，制作了`definition graph`,之所以`definition`是因为滤掉了所有与一个变量定义与过滤无关的`statments`。这个图也是从代码属性图上提取的。
+ - 构建规则：
+   - 从`selected sink` 开始进行词法分析，获取`foo`和`arguments`之间的联系。
+   - 然后从`arguments`中拉出线来沿着`data-flow`与`control-dependence edges`走。后支配树，我回走。
+   ```c
+   int bar(int x, int y) {
+    int z;
+    boo (&z);
+    if (y<10)
+    {
+      foo (x, y, &z);
+    }
+   }
+   ```
+   根据参数，往回找到`int z`, `y<10` ( varables used in the call, conditions that controll the execution of the call site)
+   - 最后使用函数调用边去追溯每个每个调用函数
+   这里根据`boo(&z)`追溯到
+   ```c
+   int boo(int *z){
+    *z = get();
+   }
+   ```
+   总的来说就是一个跨函数从sink找source的思路。在属性图上形成一颗树来分析传播路径。
+  
+   ```
