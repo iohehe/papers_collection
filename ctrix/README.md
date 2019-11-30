@@ -23,6 +23,8 @@ kernel 中有许多security checks
 * Granularity: comparison level
 （感觉还是一个刻画，比较问题）
 
+---
+
 ## 设计
 
 - 在设计上首先要找到`security checks`，`returning an error code`或者`calling an error-handling function`。
@@ -32,6 +34,8 @@ kernel 中有许多security checks
 ![](https://penlab-1252869057.cos.ap-beijing.myqcloud.com/2019-11-30-%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202019-11-30%20%E4%B8%8B%E5%8D%885.06.32.png)
 - 比较
 ![](https://penlab-1252869057.cos.ap-beijing.myqcloud.com/2019-11-30-%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202019-11-30%20%E4%B8%8B%E5%8D%882.57.54-1.png)
+
+---
 
 ## 效果
 ![](https://penlab-1252869057.cos.ap-beijing.myqcloud.com/2019-11-30-%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202019-11-30%20%E4%B8%8B%E5%8D%885.11.09.png)
