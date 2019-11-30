@@ -9,7 +9,9 @@
 ## 方法
 kernel 中有许多security checks
 ![](https://penlab-1252869057.cos.ap-beijing.myqcloud.com/2019-11-30-%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202019-11-30%20%E4%B8%8B%E5%8D%883.02.50.png)
+
 没有check的critical varibles 就是此类漏洞
+
 ![](https://penlab-1252869057.cos.ap-beijing.myqcloud.com/2019-11-30-%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202019-11-30%20%E4%B8%8B%E5%8D%883.05.30.png)
 
 本文使用了`cross-checking`这种方式来探测此类漏洞。另一种方法`Rule-based`,需要语义理解，比较难生成模式。 而这种`cross-checking`如静态分析，比较适合自动化。
@@ -21,4 +23,12 @@ kernel 中有许多security checks
 * Granularity: comparison level
 （感觉还是一个刻画，比较问题）
 
-![](https://penlab-1252869057.cos.ap-beijing.myqcloud.com/2019-11-30-%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202019-11-30%20%E4%B8%8B%E5%8D%882.57.54.png)
+## 设计
+
+- 在设计上首先要找到`security checks`，`returning an error code`或者`calling an error-handling function`。
+- 然后根据卡在`security checks`里的`critical variables`进行切片，找到`source`和`sink`。使用了`inter-procedural data-flow analysis`。
+（backward analysis for identifying source and forward analysis for identifying uses）
+- 切片（constructing peer slices）
+![](https://penlab-1252869057.cos.ap-beijing.myqcloud.com/2019-11-30-%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202019-11-30%20%E4%B8%8B%E5%8D%885.06.32.png)
+- 比较
+![](https://penlab-1252869057.cos.ap-beijing.myqcloud.com/2019-11-30-%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202019-11-30%20%E4%B8%8B%E5%8D%882.57.54-1.png)
