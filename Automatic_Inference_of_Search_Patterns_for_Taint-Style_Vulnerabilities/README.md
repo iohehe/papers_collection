@@ -129,4 +129,5 @@ In order to extend code property graphs for **interprocedural analysis**, using 
   
    但是，但是，我们要去研究的是`interproducal`,这就涉及一个`parameters`->`arguments`，这需要用图来表示。
    ![](https://penlab-1252869057.cos.ap-beijing.myqcloud.com/2019-12-12-%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202019-12-12%20%E4%B8%8B%E5%8D%884.12.18.png)
-    对于函数`bar`，这里有两个`caller`分别是`moo`和`woo`。现在我们要去构造图，我们发现了z的局部变量定义，而参数x和y无法通过函数边界跟踪。通过静态分析，我们可以得到`{int a=get()， int b=get()}`，这样我们就能拿到这两个source点，但是，在实际调用中，这个集合分属两个caller。解决方式是，
+    对于函数`bar`，这里有两个`caller`分别是`moo`和`woo`。现在我们要去构造图，我们发现了z的局部变量定义，而参数x和y无法通过函数边界跟踪。通过静态分析，我们可以得到`{int a=get()， int b=get()}`，这样我们就能拿到这两个source点，但是，在实际调用中，这个集合分属两个caller。
+    > 图定义： G=(V,E), 一个函数调用点(sink)，构建一张图，包含树集V,这些树是根据sink点所有参数追溯后支配树在本地构造的以及包含路径上所有的直接和间接调用。如果a,b属于V。那么如果存在一条边，连接ab表示a调用了b
