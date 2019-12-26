@@ -130,4 +130,33 @@ In order to extend code property graphs for **interprocedural analysis**, using 
    但是，但是，我们要去研究的是`interproducal`,这就涉及一个`parameters`->`arguments`，这需要用图来表示。
    ![](https://penlab-1252869057.cos.ap-beijing.myqcloud.com/2019-12-12-%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202019-12-12%20%E4%B8%8B%E5%8D%884.12.18.png)
     对于函数`bar`，这里有两个`caller`分别是`moo`和`woo`。现在我们要去构造图，我们发现了z的局部变量定义，而参数x和y无法通过函数边界跟踪。通过静态分析，我们可以得到`{int a=get()， int b=get()}`，这样我们就能拿到这两个source点，但是，在实际调用中，这个集合分属两个caller。
-    > 图定义： G=(V,E), 一个函数调用点(sink)，构建一张图，包含树集V,这些树是根据sink点所有参数追溯后支配树在本地构造的以及包含路径上所有的直接和间接调用。如果a,b属于V。那么如果存在一条边，连接ab表示a调用了b
+    > 图定义： G=(V,E), 一个函数调用点(sink)，构建一张图，包含树集V,这些树是根据sink点所有参数追溯后支配树在本地构造的以及包含路径上所有的直接和间接调用。如果a,b属于V。那么如果存在一条边，连接ab表示a调用了b。
+    
+    ## B. Decompression and Clustering
+    解压就是说上图，其实一个压缩了好几个函数调用情况的路径， 把他们解开。如上图 `{int z, a = get(), b=1}, {int z, a = 1, b = get() }`这样， 两组向量。有了向量可以聚类了。聚类的话使用了linkage聚类方法， 利用曼哈顿距离来生成聚类条件， 参数固定为3。
+    ![](https://penlab-1252869057.cos.ap-beijing.myqcloud.com/2019-12-26-%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202019-12-26%20%E4%B8%8B%E5%8D%886.18.21.png)
+    这里做聚类做了两次，首先是对`callee`和`type`进行聚类。 这时是一维的。然后在对参数组合进行聚类。
+       ![](https://penlab-1252869057.cos.ap-beijin.myqcloud.com/2019-12-26-%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202019-12-26%20%E4%B8%8B%E5%8D%886.20.43.png)
+    聚类使用了无监督学习。然后基于一种叫`bag-of-regex`与词袋不同， 聚类后里边的参数去用正则去匹配最大长度子串，自动生成正则表达式：
+    ![](https://penlab-1252869057.cos.ap-beijing.myqcloud.com/2019-12-26-%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202019-12-26%20%E4%B8%8B%E5%8D%886.27.36.png)
+    此时， 我们有了对应参数的查询模版：
+    ![](https://penlab-1252869057.cos.ap-beijing.myqcloud.com/2019-12-26-102850.png)
+    然后切片，找到控制条件，生成check函数的查询模版：
+    ![](https://penlab-1252869057.cos.ap-beijing.myqcloud.com/2019-12-26-102906.png)
+   > 这里已经可以通过这种方式对一个sink, 通过聚类的方式，自动化的生成joern查询模版了
+
+# EVALUATION
+   ## 在五个开源项目上进行评测
+   ![](https://penlab-1252869057.cos.ap-beijing.myqcloud.com/2019-12-26-103207.png)
+   ![](https://penlab-1252869057.cos.ap-beijing.myqcloud.com/2019-12-26-103305.png)
+   表中列出了对于上述漏洞是否找到了正确的源和正确的输入检查，生成的模式个数，生成模式的时间，执行模式挖掘所用的时间，以及减少对调用点人工检查的比例。
+   ## heartbleed漏洞
+   ![](https://penlab-1252869057.cos.ap-beijing.myqcloud.com/2019-12-26-103357.png)
+   根据生成的搜索模式，从738个sink中筛选出7个，其中2个确认有该漏洞
+   
+   * 在vlc中根据生成的查询模版，在属性图上进行图查找：
+   ![](https://penlab-1252869057.cos.ap-beijing.myqcloud.com/2019-12-26-103424.png)
+   ![](https://penlab-1252869057.cos.ap-beijing.myqcloud.com/2019-12-26-103426.png)
+# 总结
+   老实 巴交...
+    
