@@ -1,4 +1,4 @@
-# research
+\# research
 
 1. Jovanovic N, Kruegel C, Kirda E. Pixy: A static analysis tool for detecting web application vulnerabilities.
 In: 2006 IEEE Symposium on Security and Privacy (S&P’06). IEEE; 2006. p. 6–pp.
@@ -22,3 +22,8 @@ In 11th {USENIX} Workshop on Offensive Technologies ({WOOT} 17).
 7. Z. Li, D. Zou, S. Xu, H. Jin, H. Qi, and J. Hu, “VulPecker: An automated vulnerability detection system based on code similarity analysis,” 
 in Proceedings of the 32nd Annual Conference on Computer
 Security Applications. ACM, 2016, pp. 201–213.
+
+8. Kangjie Lu, Aditya Pakki, Qiushi Wu Detecting Missing-Check Bugs via Semantic- and Context-Aware Criticalness and Constraints Inferences
+
+9. Alhuzali A, Gjomemo R, Eshete B, Venkatakrishnan V. NAVEX: Precise and Scalable Exploit Generation for Dynamic Web Applications. In: 27th USENIX Security Symposium (USENIX Security 18); 2018.
+p. 377–392.
