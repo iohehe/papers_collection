@@ -23,3 +23,5 @@ p. 377–392.
 10. Y.Minamid, Static approximation of dynamically generated web pages, in WWW'05:Proceedings of the 14th International Conference on World Wide Web. New York,NY,USA: ACM Press, 2005, pp.432-441
 11. Y.Xie and A.Aiken, Static Detection of Security Vulnerabilities in Scripting Languages, http://glide.stanford.edu/yichen/research/sec.ps, 2006.
 12. Kim, Seulbae et al. “VUDDY: A Scalable Approach for Vulnerable Code Clone Discovery.” 2017 IEEE Symposium on Security and Privacy (SP) (2017): 595-614.
+
+13. Nashaat, Mona et al. “Detecting Security Vulnerabilities in Object-Oriented PHP Programs.” 2017 IEEE 17th International Working Conference on Source Code Analysis and Manipulation (SCAM) (2017): 159-164.
