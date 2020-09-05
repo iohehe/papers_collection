@@ -7,60 +7,61 @@
 
 * 2005
 
-Xie, Y. and A. Aiken. “Static Detection of Security Vulnerabilities in Scripting Languages.” USENIX Security Symposium (2006). 
-Jovanovic, N. et al. “Pixy: a static analysis tool for detecting Web application vulnerabilities.” 2006 IEEE Symposium on Security and Privacy (S&P'06) (2006): 6 pp.-263.
-Nguyen-Tuong, Anh et al. “Automatically Hardening Web Applications Using Precise Tainting.” SEC (2005).
+   * Xie, Y. and A. Aiken. “Static Detection of Security Vulnerabilities in Scripting Languages.” USENIX Security Symposium (2006). 
+   * Jovanovic, N. et al. “Pixy: a static analysis tool for detecting Web application vulnerabilities.” 2006 IEEE Symposium on Security and Privacy (S&P'06) (2006): 6 pp.-263.
+   * Nguyen-Tuong, Anh et al. “Automatically Hardening Web Applications Using Precise Tainting.” SEC (2005).
 
 
 * 2007
 
-Wassermann, Gary and Z. Su. “Sound and precise analysis of web applications for injection vulnerabilities.” PLDI '07 (2007).
-Balzarotti, D. et al. “Multi-module vulnerability analysis of web-based applications.” CCS '07 (2007).
+   * Wassermann, Gary and Z. Su. “Sound and precise analysis of web applications for injection vulnerabilities.” PLDI '07 (2007).
+   * Balzarotti, D. et al. “Multi-module vulnerability analysis of web-based applications.” CCS '07 (2007).
 
 
 * 2008
 
-Wassermann, Gary and Z. Su. “Static detection of cross-site scripting vulnerabilities.” 2008 ACM/IEEE 30th International Conference on Software Engineering (2008): 171-180.
-Balzarotti, D. et al. “Saner: Composing Static and Dynamic Analysis to Validate Sanitization in Web Applications.” 2008 IEEE Symposium on Security and Privacy (sp 2008) (2008): 387-401.
+   * Wassermann, Gary and Z. Su. “Static detection of cross-site scripting vulnerabilities.” 2008 ACM/IEEE 30th International Conference on Software Engineering (2008): 171-180.
+   * Balzarotti, D. et al. “Saner: Composing Static and Dynamic Analysis to Validate Sanitization in Web Applications.” 2008 IEEE Symposium on Security and Privacy (sp 2008) (2008): 387-401.
 
 
 * 2009
 
-Yu, Fang et al. “Generating Vulnerability Signatures for String Manipulating Programs Using Automata-Based Forward and Backward Symbolic Analyses.” 2009 IEEE/ACM International Conference on Automated Software Engineering (2009): 605-609.
+   * Yu, Fang et al. “Generating Vulnerability Signatures for String Manipulating Programs Using Automata-Based Forward and Backward Symbolic Analyses.” 2009 IEEE/ACM International Conference on Automated Software Engineering (2009): 605-609.
 
 
 * 2010
 
-Yu, Fang et al. “Stranger: An Automata-Based String Analysis Tool for PHP.” TACAS (2010).
-Jovanovic, N. et al. “Static analysis for detecting taint-style vulnerabilities in web applications.” J. Comput. Secur. 18 (2010): 861-907.
+   * Yu, Fang et al. “Stranger: An Automata-Based String Analysis Tool for PHP.” TACAS (2010).
+   * Jovanovic, N. et al. “Static analysis for detecting taint-style vulnerabilities in web applications.” J. Comput. Secur. 18 (2010): 861-907.
 
 
 * 2014
 
-Dahse, J. and T. Holz. “Simulation of Built-in PHP Features for Precise Static Code Analysis.” NDSS (2014).
-Hauzar, David and J. Kofron. “WeVerca: Web Applications Verification for PHP.” SEFM (2014).
+   * Dahse, J. and T. Holz. “Simulation of Built-in PHP Features for Precise Static Code Analysis.” NDSS (2014).
+   * Hauzar, David and J. Kofron. “WeVerca: Web Applications Verification for PHP.” SEFM (2014).
 
 
 * 2015
 
-Dahse, Johannes and Thorsten Holz. “Static Detection of Second-Order Vulnerabilities in Web Applications.” USENIX Security Symposium (2014).
-Olivo, Oswaldo et al. “Detecting and Exploiting Second Order Denial-of-Service Vulnerabilities in Web Applications.” CCS '15 (2015).
-Nunes, P. et al. “phpSAFE: A Security Analysis Tool for OOP Web Application Plugins.” 2015 45th Annual IEEE/IFIP International Conference on Dependable Systems and Networks (2015): 299-306.
+   * Dahse, Johannes and Thorsten Holz. “Static Detection of Second-Order Vulnerabilities in Web Applications.” USENIX Security Symposium (2014).
+   * Olivo, Oswaldo et al. “Detecting and Exploiting Second Order Denial-of-Service Vulnerabilities in Web Applications.” CCS '15 (2015).
+   * Nunes, P. et al. “phpSAFE: A Security Analysis Tool for OOP Web Application Plugins.” 2015 45th Annual IEEE/IFIP International Conference on Dependable Systems and Networks (2015): 299-306.
 
 
 * 2016
 
-Yu, Fang et al. “Optimal sanitization synthesis for web application vulnerability repair.” ISSTA 2016 (2016).
+   * Yu, Fang et al. “Optimal sanitization synthesis for web application vulnerability repair.” ISSTA 2016 (2016).
 
 
 * 2017
 
-Backes, M., Rieck, K., Skoruppa, M., Stock, B., & Yamaguchi, F. (2017). Efficient and Flexible Discovery of PHP Application Vulnerabilities. 2017 IEEE European Symposium on Security and Privacy (EuroS&P), 334-349.
+   * Backes, M., Rieck, K., Skoruppa, M., Stock, B., & Yamaguchi, F. (2017). Efficient and Flexible Discovery of PHP Application Vulnerabilities. 2017 IEEE European Symposium on Security and Privacy (EuroS&P), 334-349.
 
 
 * 2018
 
-Alhuzali, Abeer et al. “NAVEX: Precise and Scalable Exploit Generation for Dynamic Web Applications.” USENIX Security Symposium (2018)
+   * Alhuzali, Abeer et al. “NAVEX: Precise and Scalable Exploit Generation for Dynamic Web Applications.” USENIX Security Symposium (2018)
+
 ------------------------
 1. Jovanovic N, Kruegel C, Kirda E. Pixy: A static analysis tool for detecting web application vulnerabilities.
 In: 2006 IEEE Symposium on Security and Privacy (S&P’06). IEEE; 2006. p. 6–pp.
