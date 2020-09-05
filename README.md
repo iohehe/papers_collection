@@ -1,8 +1,8 @@
 # research
 * 2004
 
-Huang, Yao-Wen et al. “Securing web application code by static analysis and runtime protection.” WWW '04 (2004).
-Huang, Yao-Wen et al. “Verifying Web applications using bounded model checking.” International Conference on Dependable Systems and Networks, 2004 (2004): 199-208.
+   * Huang, Yao-Wen et al. “Securing web application code by static analysis and runtime protection.” WWW '04 (2004).
+   * Huang, Yao-Wen et al. “Verifying Web applications using bounded model checking.” International Conference on Dependable Systems and Networks, 2004 (2004): 199-208.
 
 
 * 2005
