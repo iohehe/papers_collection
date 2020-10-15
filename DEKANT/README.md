@@ -15,7 +15,7 @@ ISSTA 2016
 2.3.1 隐式马尔科夫链
 ![image](https://user-images.githubusercontent.com/3693435/96080176-10fb3700-0ee9-11eb-8153-fd6d8b159148.png)
 
-一个模型：![image](https://user-images.githubusercontent.com/3693435/96080201-22444380-0ee9-11eb-8c1a-2d348be7d76c.png)
+一个模型：入=(派，A，B)
 两个假设：(1) 齐次马尔可夫假设： 序列中任意位置的状态只依赖于前一位置的状态。
 (2) 独立观测假设： 任意位置的观测状态只依赖于该位置的马尔可夫链状态。
 三个问题：(1) 评估问题（detect)，（2）学习问题(learn)，(3)预测问题(decode)
