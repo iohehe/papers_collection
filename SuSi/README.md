@@ -4,3 +4,11 @@
 
 ![Jietu20201028-083211](https://user-images.githubusercontent.com/3693435/97376358-22d0d700-18f8-11eb-8e9a-908b46f4edc7.jpg)
 ![Jietu20201028-083229](https://user-images.githubusercontent.com/3693435/97376362-25cbc780-18f8-11eb-8b47-1af3884292df.jpg)
+
+## 方法设计
+  抽取的参数上， SUSI选取了一下几个纬度：
+  * Method Name, 
+  * Method has Parameters, Sink点通常是有参数的
+  * Return Value Type, 返回值类型
+  * Parameter Type, 参数类型
+  * 
