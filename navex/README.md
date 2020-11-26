@@ -48,17 +48,16 @@ USNEX Security 18
 2.4.1 实验效果
 作者对26个开源PHP App进行测试，一共22kPHP文件，3.2M源代码行。针对SQL注入漏洞，总共找到155个SQL注入，生成105个利用链，针对XSS，总共找到128个XSS, 生成90个利用链。
 ![image](https://user-images.githubusercontent.com/3693435/100354349-00cb9100-302b-11eb-9eaf-caee334e26ba.png)
-![image](https://user-images.githubusercontent.com/3693435/100354353-045f1800-302b-11eb-950b-e4c54fb86995.png)
 
 
 
 2.4.2 实验对比
 
 作者同RIPS(1)以及带有二次注入功能的RIPS(2), 作者之前的工作Chainsaw(3,污点分析使用Pixy)进行静态污点分析对比：
-![image](https://user-images.githubusercontent.com/3693435/100354358-075a0880-302b-11eb-8bcd-8e9a455d6e72.png)
+![image](https://user-images.githubusercontent.com/3693435/100354353-045f1800-302b-11eb-950b-e4c54fb86995.png)
 
 作者同自己之前的工作Chainsaw(纯静态生成Exp)进行Exp生成对比：
-![image](https://user-images.githubusercontent.com/3693435/100354331-f7dabf80-302a-11eb-8516-b1cf587d36dc.png)
+![image](https://user-images.githubusercontent.com/3693435/100354358-075a0880-302b-11eb-8bcd-8e9a455d6e72.png)
 
 
 论文评价
