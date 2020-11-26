@@ -22,7 +22,6 @@ USNEX Security 18
 作者提出了NAVEX系统来解决以上问题，本方案具有两大步骤：Step1，通过静态分析方式获得漏洞污点传播链，并对利用漏洞字典进行约束求解获得漏洞触发Exp；Step2，通过动态爬取HTTP请求信息与动态符号执行相结合的方式，求解出每个漏洞所在模块 从web公共入口可抵达的导航链，并求出每个请求中相应的约束条件。
 
 ![image](https://user-images.githubusercontent.com/3693435/100354440-2b1d4e80-302b-11eb-8754-7d6d53ac91c2.png)
-![image](https://user-images.githubusercontent.com/3693435/100354345-fdd0a080-302a-11eb-9d5f-4f8ad5f110b6.png)
 
 
 2.3.1 Vulnerable Sinks Identification
@@ -48,6 +47,7 @@ USNEX Security 18
 2.4.1 实验效果
 作者对26个开源PHP App进行测试，一共22kPHP文件，3.2M源代码行。针对SQL注入漏洞，总共找到155个SQL注入，生成105个利用链，针对XSS，总共找到128个XSS, 生成90个利用链。
 ![image](https://user-images.githubusercontent.com/3693435/100354349-00cb9100-302b-11eb-9eaf-caee334e26ba.png)
+![image](https://user-images.githubusercontent.com/3693435/100354345-fdd0a080-302a-11eb-9d5f-4f8ad5f110b6.png)
 
 
 
