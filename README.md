@@ -28,6 +28,8 @@ p. 377–392.
 
 14. Khalaf, Aya et al. “A Machine Learning Approach for Classifying Faults in Microgrids using Wavelet Decomposition.” 2019 IEEE 29th International Workshop on Machine Learning for Signal Processing (MLSP) (2019): 1-6.
 
+15. Medeiros, Ibéria et al. “DEKANT: a static analysis tool that learns to detect web application vulnerabilities.” ISSTA 2016 (2016).
+
 
 # PHP研究线
 * 2004
