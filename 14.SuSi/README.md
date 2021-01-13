@@ -10,7 +10,8 @@
 SUSI采用了监督学习的方法分来训练一个分类器。使用了SVM的一种更加精确的实现SMO。 由在第一轮有三种类型需要划分(source, sink, neither)，在第二轮有更多类型，因此解决这个问题， 我们采用one-against-all classification.(~~就是把一个类型从所有中提溜出来~~)。 
 
  ### B. Design of the Approach
- 
+ ![Jietu20210113-211719](https://user-images.githubusercontent.com/3693435/104459850-47c81280-55e8-11eb-9e9f-f589fe8d7024.jpg)
+
 抽取的参数上， SUSI选取了一下几个纬度：
   * Method Name, 
   * Method has Parameters, Sink点通常是有参数的
