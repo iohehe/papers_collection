@@ -11,10 +11,26 @@ SUSI采用了监督学习的方法分来训练一个分类器。使用了SVM的�
 
  ### B. Design of the Approach
  ![Jietu20210113-211719](https://user-images.githubusercontent.com/3693435/104459850-47c81280-55e8-11eb-9e9f-f589fe8d7024.jpg)
-
-抽取的参数上， SUSI选取了一下几个纬度：
-  * Method Name, 
-  * Method has Parameters, Sink点通常是有参数的
-  * Return Value Type, 返回值类型
-  * Parameter Type, 参数类型
-  * 
+ 一个比较典型的机器学习框架，包含四层: input, preparation, classification, oand output. 方框代表对象，圆框代表行为。 实现代表框架中数据流向。 虚线代表将第一轮的结果回流到第二轮。
+ Susi的第一轮的原始数据来自两个set, 其中，training data为手工标注而成， test data 为需要分类的data。
+ 第二轮中的training仍然需要手标：
+ - sources: *account*, *bluetooth*, *browser*, *calendar*, *contcat*, *database*, *file*, *network*, *nfc*, *settings*, *sync*, *unique-identifer*。
+ - sinks: *account*, *audio*, *browser*, *calendar*, *contact*, *file*, *log*, *network*, *nfc*, *phone-connection*, *phone-connection*, *phone-state*, *sms/mms*, *sync*, *system*,*voip*
+ 
+ ### C. Feature Database
+ 抽取的参数上， SUSI选取了以下几个纬度进行的特征构建，有一些特征会在同一个维度上出现如在method name中的`method name star with get`, `method name star with put`...所以作者说由144个语法语义特征。
+  * Method Name, 方法名包含或者能够头匹配一些关键字： get, put...  
+  * Method has Parameters, 方法参数声明中至少包含一个形参，(sink中通常会有一个，source就不一定)
+  * Return Value Type, 返回值类型，无返回的函数一般不会是source
+  * Parameter Type, 参数类型， 可以是一个具体的类型或者是一个特殊包中的类型，如java.io.*包， 作为参数类型属于这个包中的类型的化就有可能是一个source或者sink
+  * Parameter is an Interface， 如果形参是一个接口类型，通常既不是sink,又不是source（？？？接口回调机制）
+  * Method Modifiers, 方法修饰符， static通常既不是source又不是sink（？？？为啥）， 
+  * Class Modifiers, 类修饰符， protected类既不是source又不是sink
+  * Class Name，类名中的关键字， 如Manager.
+  * Dataflow to Return， 如果一个方法调用了一个含有某些关键字的方法(read,以source为例)， 而这个方法的返回值流到了return中，那么这个方法有可能是一个潜在的source。(对已知source打包:)
+  * Dataflow to Sink, 如果一个方法从参数开始追入一个包含某些关键字的方法(update, 以sink为例)， 那么这个方法有可能就是一个潜在的sink。(对已知sink打包)
+  * Data Flow to Abstract Sink, 许多硬件层面的sink通常有一层抽象结构， 如果一个方法的parameter传入这种抽象方法，很有可能就是一个sink点。
+  * Required Permission,  调用方法需要特殊权限，Android API. PScout list(???) XD
+  
+ =
+  
