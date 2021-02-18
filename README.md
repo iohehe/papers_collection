@@ -19,17 +19,28 @@ Security Applications. ACM, 2016, pp. 201–213.
 8. Kangjie Lu, Aditya Pakki, Qiushi Wu Detecting Missing-Check Bugs via Semantic- and Context-Aware Criticalness and Constraints Inferences
 9. Alhuzali A, Gjomemo R, Eshete B, Venkatakrishnan V. NAVEX: Precise and Scalable Exploit Generation for Dynamic Web Applications. In: 27th USENIX Security Symposium (USENIX Security 18); 2018.
 p. 377–392.
-
 10. Y.Minamid, Static approximation of dynamically generated web pages, in WWW'05:Proceedings of the 14th International Conference on World Wide Web. New York,NY,USA: ACM Press, 2005, pp.432-441
 11. Y.Xie and A.Aiken, Static Detection of Security Vulnerabilities in Scripting Languages, http://glide.stanford.edu/yichen/research/sec.ps, 2006.
 12. Kim, Seulbae et al. “VUDDY: A Scalable Approach for Vulnerable Code Clone Discovery.” 2017 IEEE Symposium on Security and Privacy (SP) (2017): 595-614.
-
 13. Nashaat, Mona et al. “Detecting Security Vulnerabilities in Object-Oriented PHP Programs.” 2017 IEEE 17th International Working Conference on Source Code Analysis and Manipulation (SCAM) (2017): 159-164.
-
 14. Khalaf, Aya et al. “A Machine Learning Approach for Classifying Faults in Microgrids using Wavelet Decomposition.” 2019 IEEE 29th International Workshop on Machine Learning for Signal Processing (MLSP) (2019): 1-6.
-
 15. Medeiros, Ibéria et al. “DEKANT: a static analysis tool that learns to detect web application vulnerabilities.” ISSTA 2016 (2016).
-
+16. Halfond, William G. J. and A. Orso. “AMNESIA: analysis and monitoring for NEutralizing SQL-injection attacks.” ASE '05 (2005).
+17. Dahse, J. et al. “Code Reuse Attacks in PHP: Automated POP Chain Generation.” Proceedings of the 2014 ACM SIGSAC Conference on Computer and Communications Security (2014): n. pag.
+18. Paulsen, Brandon et al. “Debreach: Mitigating Compression Side Channels via Static Analysis and Transformation.” 2019 34th IEEE/ACM International Conference on Automated Software Engineering (ASE) (2019): 899-911.
+19. Wang, Huanting et al. “Combining Graph-Based Learning With Automated Data Collection for Code Vulnerability Detection.” IEEE Transactions on Information Forensics and Security 16 (2021): 1943-1958.
+20. Dahse, J. and T. Holz. “Simulation of Built-in PHP Features for Precise Static Code Analysis.” NDSS (2014).(AND RIPS second order)
+21. Moor, O. et al. “Keynote Address: .QL for Source Code Analysis.” Seventh IEEE International Working Conference on Source Code Analysis and Manipulation (SCAM 2007) (2007): 3-16.
+22. Li, Zhenmin and Yuanyuan Zhou. “PR-Miner: automatically extracting implicit programming rules and detecting violations in large software code.” ESEC/FSE-13 (2005).
+23. Brown, Fraser et al. “Sys: A Static/Symbolic Tool for Finding Good Bugs in Good (Browser) Code.” USENIX Security Symposium (2020).
+24. Yu, Fang et al. “Stranger: An Automata-Based String Analysis Tool for PHP.” TACAS (2010).
+25. Balzarotti, D. et al. “Saner: Composing Static and Dynamic Analysis to Validate Sanitization in Web Applications.” 2008 IEEE Symposium on Security and Privacy (sp 2008) (2008): 387-401.
+26. Yamaguchi, Fabian et al. “Chucky: exposing missing checks in source code for vulnerability discovery.” Proceedings of the 2013 ACM SIGSAC conference on Computer & communications security (2013): n. pag.
+27. Yamaguchi, Fabian et al. “Modeling and Discovering Vulnerabilities with Code Property Graphs.” 2014 IEEE Symposium on Security and Privacy (2014): 590-604.
+28. Alexander Bulekov et al. “Saphire: Sandboxing PHP Applications with Tailored System Call Allowlists”.
+29. Alhuzali, Abeer et al. “Chainsaw: Chained Automated Workflow-based Exploit Generation.” Proceedings of the 2016 ACM SIGSAC Conference on Computer and Communications Security (2016): n. pag.
+30. Nunes, P. et al. “phpSAFE: A Security Analysis Tool for OOP Web Application Plugins.” 2015 45th Annual IEEE/IFIP International Conference on Dependable Systems and Networks (2015): 299-306.
+31. 
 
 # PHP研究线
 * 2004
