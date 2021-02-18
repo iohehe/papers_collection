@@ -40,7 +40,20 @@ p. 377–392.
 28. Alexander Bulekov et al. “Saphire: Sandboxing PHP Applications with Tailored System Call Allowlists”.
 29. Alhuzali, Abeer et al. “Chainsaw: Chained Automated Workflow-based Exploit Generation.” Proceedings of the 2016 ACM SIGSAC Conference on Computer and Communications Security (2016): n. pag.
 30. Nunes, P. et al. “phpSAFE: A Security Analysis Tool for OOP Web Application Plugins.” 2015 45th Annual IEEE/IFIP International Conference on Dependable Systems and Networks (2015): 299-306.
-31. 
+31. Zheng, Yunhui et al. “Z3-str: a z3-based string solver for web application analysis.” ESEC/FSE 2013 (2013). 
+32. Prasse, Paul et al. “Learning to identify concise regular expressions that describe email campaigns.” J. Mach. Learn. Res. 16 (2015): 3687-3720.
+33. Eriksson, B. et al. “Black Widow: Blackbox Data-driven Web Scanning.” (2021).
+34. Trinh, Minh-Thai et al. “S3: A Symbolic String Solver for Vulnerability Detection in Web Applications.” Proceedings of the 2014 ACM SIGSAC Conference on Computer and Communications Security (2014): n. pag.
+35. Kiezun, Adam et al. “HAMPI: a solver for string constraints.” ISSTA (2009).
+36. Schwartz, E. J. et al. “All You Ever Wanted to Know about Dynamic Taint Analysis and Forward Symbolic Execution (but Might Have Been Afraid to Ask).” 2010 IEEE Symposium on Security and Privacy (2010): 317-331.
+37. Steffens, M. et al. “Don't Trust The Locals: Investigating the Prevalence of Persistent Client-Side Cross-Site Scripting in the Wild.” NDSS (2019). 
+38. Daniil Sadyrin et al. “Application of Graph Databases for Static Code Analysis of Web-Applications” 
+39. Yan, H. et al. “Machine-Learning-Guided Typestate Analysis for Static Use-After-Free Detection.” Proceedings of the 33rd Annual Computer Security Applications Conference (2017): n. pag.
+40. Grech, N. and Y. Smaragdakis. “P/Taint: unified points-to and taint analysis.” Proceedings of the ACM on Programming Languages 1 (2017): 1 - 28.
+41. Buyukkayhan, A. S. et al. “What’s in an Exploit? An Empirical Analysis of Reflected Server XSS Exploitation Techniques.” (2020).
+42. Huang, Yao-Wen et al. “Securing web application code by static analysis and runtime protection.” WWW '04 (2004).
+43. Wassermann, Gary and Z. Su. “Sound and precise analysis of web applications for injection vulnerabilities.” PLDI '07 (2007).
+44. Huang, Yao-Wen et al. “Verifying Web applications using bounded model checking.” International Conference on Dependable Systems and Networks, 2004 (2004): 199-208.
 
 # PHP研究线
 * 2004
