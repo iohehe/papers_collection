@@ -1,10 +1,10 @@
 # ACSAC2012-Generalized Vulnerability Extrapolation using Abstract Syntax Trees
 
-# 1 
+# INTRO
 - 这是一篇2012年的ACSAC， 看这篇文章是想看他如何把AST映射到向量空间的。特色是将机器学习与静态分析相结合。
 - 这是fabs博士发的， 我是他的小迷弟。
 
-# 2
+# DESIGN
 
 - 本文也是， 提出一种辅助代码审计工具， 用来发现源码中的漏洞。
 - 方法是首先生成AST,然后在树上去找漏洞模式。（为什么要用AST这层, 这层可能好提向量？ 或者这层能够突出代码文本的结构？）（是的， AST保留了语法结构信息与每个节点的内容信息）
@@ -26,18 +26,15 @@
   - 2. Embedding in a vector space. 上一步我们我们有了语法树，要进行机器学习比对，需要将其映射到向量空间。此步骤便是特征化向量的第一步。每棵语法树， 将被映射到空间S中， S空间有三种定义方式：1.是只保留API nodes的节点，其他节点忽略； 2. 保留API nodes和语法结构，即在D层内发现一个API nodes(D在实际使用时为3层), 就包括这棵树，并把所有非API nodes的节点全用占位符代替。3. 与2相同，但是还保留了syntax nodes。
   有了这三种对向量空间集合S的定义， 我们对目标code base中的每一个function都有了三个评估角度，相当于给了三种由简单到复杂的匹配模式。
   有了这个空间S的定义后， 我们就可以定义一个映射I,将每棵树映射到S中。以上树(🌲)为例子，如果映射的API nodes空间(第一种只包含API nodes的)，那么这颗AST就会表示成三个向量x=[param:int, decl: int, call:bar],此时在整个code base的大API nodes空间S中，就可以表示一个矩阵M(s*x)(矩阵在映射时还加了一个TF-IDF权值，还不是很懂，只说是能去掉一些实际相似度不高的)。可以看到这颗AST只有三个维度，因此在整个空间上非常稀疏，因此实际使用时易于比较。
-  - 3. Identification of API usage patterns.  简述一下：这一步是为了让功能相近的函数有一个相关度，将矩阵M拆分成了三个，其中一个向量表示了相关度。
+  - 3. Identification of API usage patterns.  简述一下：这一步是为了让功能相近的函数有一个相关度，使用了一种latent semantic analysis的语义分析技术， 该技术常用于对自然语言中，文档主题的判定。 将矩阵M拆分成了三个，其中一个向量表示了相关度。
   - 4. Assisted vulnerability discovery. 这一步就是找漏洞了。使用上一步的三个矩阵进行比较。
 
 
   
 > 文章把三类节点分定为`API`: `parameters types, declaration types and function calls`,第二类不是很懂。
 
-## 映射向量空间：
-  将语法树映射到向量空间，需要保护好树的内容和结构， 为了做到这一点，文章把每一个function做成子树， 构成一个子树集合。提向量集合s有三个方法：
-    1. API node: 只从树上提API点做成集合， 其他点忽略。
-    2. API subtrees: 提一个子树，深度D,至少包含一个API点，其他点占位符。
-    3. API/S subtrees: 在2的基础上有算上了`syntax node`(API node + syntax node)
+# EVALUATION
+ 设计了数量上和质量上的两种评估， 评估目标是四个软件(LibTIFF, Pidgin, FFmpeg, Asterisk)。
 
 # 总结
 - 文章中从AST上提一些感兴趣的点然后生成向量的思路感觉还是很好的。
