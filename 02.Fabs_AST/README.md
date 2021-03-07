@@ -7,10 +7,13 @@
 # 2
 
 - 本文也是， 提出一种辅助代码审计工具， 用来发现源码中的漏洞。
-- 方法是首先生成AST,然后在树上去找漏洞模式。（为什么要用AST这层, 这层可能好提向量？ 或者这层能够突出代码文本的结构？）
-- 作者在2011年的woot上发表了一篇[1],这篇文章里就提出了这个`vulnerability extrapolation`的方法，这种方法的描述是:`embedding code in a vector space and automatically determining API usage patterns using machine learning`
+- 方法是首先生成AST,然后在树上去找漏洞模式。（为什么要用AST这层, 这层可能好提向量？ 或者这层能够突出代码文本的结构？）（是的， AST保留了语法结构信息与每个节点的内容信息）
+- 作者在2011年的woot上发表了一篇[1],这篇文章里就提出了这个`vulnerability extrapolation`的方法，这种方法的描述是:`embedding code in a vector space and automatically determining API usage patterns using machine learning`（就是说将代码嵌入到向量空间中利用机器学习做漏洞匹配）
+
+在方法上， 首先需要明白的是， 这是一种辅助性的手段。 我觉得这可能是fabs博士codeminer的理念(至少在早期)，即自动化辅助人工审计。 本文辅助方法是通过代码相似度匹配的方法， 通过把本项目的一个已知漏洞解析成语法树，再进行一系列的变换后映射到向量空间后。 用同样的方法处理所有函数， 然后去匹配相似度，认为， 相似度高的函数可能包含同样的漏洞。作者在进行相似度匹配的时候既保留了内容信息， 又保留了语法结构。对比于redebug, vuddy这种token化处理比较函数相似度的(plain),我想这种做法的好处可能是比较精细，当然前者是可以跨项目比对的(理论上，实际效果可能还是有联系的项目作用会大一点)。 而本文的方法，内容上不token化，保留原标识符信息比较(因为同项目可能漏洞触发路径上的关键函数都是调用的一个)， 又保留了语法树结构。 精度上应该会更好一些(没有复现)。
+简单介绍一下这个方法：
 - 这种方法分了四部：
-  - 1. Extraction of API symbols. 将代码中的每一个函数token化解析成语法树，并在语法树上定义一类`API symbols`节点
+  - 1. Extraction of AST(获取语法树). 将输入的code base 以函数为单位生成语法树。 利用了一种`island grammars`技术，此技术对于c/c++代码不需要考虑编译环境既可以进行语法解析。实现上使用了ANTLR做为parser.
   - 2. Embedding in a vector space. 将每一个function嵌入到向量空间。
   - 3. Identification of API usage patterns. 
   - 4. Assisted vulnerability discovery.
