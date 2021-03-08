@@ -1,12 +1,15 @@
-   这片文章发表在14年的NDSS， 引用率很高， 主要是用了SVM（支持向量机）来在Android中区分sink点和source点。
+# INTRO 
+这片文章发表在14年的NDSS， 引用率很高， 主要是用了SVM（支持向量机）来在Android中区分sink点和source点。
 文章主要是针对Android引入的一些API进行Sink， source分类， 测试目标主要是敏感信息类的漏洞。
 文章使用SVM进行分类为了两部分，首先是划分为Sources.Sinks和Neither的问题。第二部分比较有意思， 对Source,Sink有进行了进一步的分类(category),如将source来源分类为Account(用户)， Bluetooth(蓝牙)，Browser(浏览器)， Calendar(日历),contact（协议？），database(数据库)， File(文件)， Network(网络) ，NFC, Setting(设置)， SYNC, unique_identifer, no_category.（第二部分会将neither忽略）
 
 ![Jietu20201028-083211](https://user-images.githubusercontent.com/3693435/97376358-22d0d700-18f8-11eb-8e9a-908b46f4edc7.jpg)
 ![Jietu20201028-083229](https://user-images.githubusercontent.com/3693435/97376362-25cbc780-18f8-11eb-8b47-1af3884292df.jpg)
 
-# 方法设计
-该方法设计由两部分组成， 第一部分给出了SOURCES和SINKS的定义， 算是一个理论补充部分； 第二部分是分类方法介绍
+另外本文还添加了MOTIVATING EXPAMPLE是一个代码案例，证明确实有一些sink是在之前的分析工具中是被忽略的。
+
+# DESIGN
+该方法设计由两部分组成(添加了原理说明部分)， 第一部分给出了SOURCES和SINKS的定义， 算是一个理论补充部分； 第二部分是分类方法介绍
 ## DEFINITION OF SOURCES AND SINKS
  * Definition 1(Data): A piece of data is a value or a reference to a value. (意会一下)
  * Definition 2(Resource Method): A resource method reads data from or writes data to a shared resource. (resource method就是从共享resource里读或者写的方法)
@@ -15,13 +18,17 @@
 
 ## CLASSIFICATION APPROACH
 此部分分ABCD, A介绍了一下machine learning方法(感觉这篇文章废话特别多) B才是核心设计 C开始解释我要提取的基本特征 D重点说明数据流特征
+
  ### A.Machine Learning Primer
 SUSI采用了监督学习的方法分来训练一个分类器。使用了SVM的一种更加精确的实现SMO。 由在第一轮有三种类型需要划分(source, sink, neither)，在第二轮有更多类型，因此解决这个问题， 我们采用one-against-all classification.(~~就是把一个类型从所有中提溜出来~~)。 
 
  ### B. Design of the Approach
  ![Jietu20210113-211719](https://user-images.githubusercontent.com/3693435/104459850-47c81280-55e8-11eb-9e9f-f589fe8d7024.jpg)
- 一个比较典型的机器学习框架，包含四层: input, preparation, classification, oand output. 方框代表对象，圆框代表行为。 实现代表框架中数据流向。 虚线代表将第一轮的结果回流到第二轮。
- Susi的第一轮的原始数据来自两个set, 其中，training data为手工标注而成， test data 为需要分类的data。
+ 一个比较典型的机器学习框架，包含四层: input, preparation, classification, oand output. 方框代表处理对象，圆框代表行为。 整个流程跑两轮，第一轮分类(classifying)，所有的方法将被分为三类:source, sink, 都不是。 第二轮在此基础上，在对source和sink进行分类(categorizing), 比如sink是文件系统还是网络...图中，实线代表框架中数据流向。 而虚线代表将第一轮的结果回流到第二轮。
+ 
+ 一个比较典型的机器学习框架，包含四层: input, preparation, classification, oand output. 方框代表处理对象，圆框代表行为。 整个流程跑两轮，第一轮分类(classifying)，所有的方法将被分为三类:source, sink, 都不是。 第二轮在此基础上，在对source和sink进行分类(categorizing), 比如sink是文件系统还是网络...图中，实线代表框架中数据流向。 而虚线代表将第一轮的结果回流到第二轮。
+ 一个比较典型的机器学习框架，包含四层: input, preparation, classification, oand output. 方框代表处理对象，圆框代表行为。 整个流程跑两轮，第一轮分类(classifying)，所有的方法将被分为三类:source, sink, 都不是。 第二轮在此基础上，在对source和sink进行语义上的分类(categorizing), 比如sink是文件系统还是网络...图中，实线代表框架中数据流向。 而虚线代表将第一轮的结果回流到第二轮。
+ Susi的第一轮的原始数据来自两个set, 其中，training data为手工标注(handle-annotated training examples)而成，而test data 为需要分类的data。 training data要比test data集小很多。
  第二轮中的training仍然需要手标：
  - sources: *account*, *bluetooth*, *browser*, *calendar*, *contcat*, *database*, *file*, *network*, *nfc*, *settings*, *sync*, *unique-identifer*。
  - sinks: *account*, *audio*, *browser*, *calendar*, *contact*, *file*, *log*, *network*, *nfc*, *phone-connection*, *phone-connection*, *phone-state*, *sms/mms*, *sync*, *system*,*voip*
@@ -40,4 +47,6 @@ SUSI采用了监督学习的方法分来训练一个分类器。使用了SVM的�
   * Dataflow to Sink, 如果一个方法从参数开始追入一个包含某些关键字的方法(update, 以sink为例)， 那么这个方法有可能就是一个潜在的sink。(对已知sink打包)
   * Data Flow to Abstract Sink, 许多硬件层面的sink通常有一层抽象结构， 如果一个方法的parameter传入这种抽象方法，很有可能就是一个sink点。
   * Required Permission,  调用方法需要特殊权限，Android API. PScout list(???) XD
+ 
+ ### D. Dataflow Features
  
