@@ -5,7 +5,16 @@
 ![Jietu20201028-083211](https://user-images.githubusercontent.com/3693435/97376358-22d0d700-18f8-11eb-8e9a-908b46f4edc7.jpg)
 ![Jietu20201028-083229](https://user-images.githubusercontent.com/3693435/97376362-25cbc780-18f8-11eb-8b47-1af3884292df.jpg)
 
-## 方法设计
+# 方法设计
+该方法设计由两部分组成， 第一部分给出了SOURCES和SINKS的定义， 算是一个理论补充部分； 第二部分是分类方法介绍
+## DEFINITION OF SOURCES AND SINKS
+ * Definition 1(Data): A piece of data is a value or a reference to a value. (意会一下)
+ * Definition 2(Resource Method): A resource method reads data from or writes data to a shared resource. (resource method就是从共享resource里读或者写的方法)
+ * Definition 3(Android Source): Sources are calls into resource methods returning non-constant values into the application code. (注意non-constant值，即不是常量，如每个手机都有自己的IMEI编号)
+ * Definition 4(Android Sinks): Sinks are calls into resource methods accept at least one non-constant data value from the application as parameter, if and only if a new value is written or an existing one is overwritten on the resource.(就是将non-constant data作为parameter，添加或者重写已有资源的)。 
+
+## CLASSIFICATION APPROACH
+此部分分ABCD, A介绍了一下machine learning方法(感觉这篇文章废话特别多) B才是核心设计 C开始解释我要提取的基本特征 D重点说明数据流特征
  ### A.Machine Learning Primer
 SUSI采用了监督学习的方法分来训练一个分类器。使用了SVM的一种更加精确的实现SMO。 由在第一轮有三种类型需要划分(source, sink, neither)，在第二轮有更多类型，因此解决这个问题， 我们采用one-against-all classification.(~~就是把一个类型从所有中提溜出来~~)。 
 
@@ -31,6 +40,4 @@ SUSI采用了监督学习的方法分来训练一个分类器。使用了SVM的�
   * Dataflow to Sink, 如果一个方法从参数开始追入一个包含某些关键字的方法(update, 以sink为例)， 那么这个方法有可能就是一个潜在的sink。(对已知sink打包)
   * Data Flow to Abstract Sink, 许多硬件层面的sink通常有一层抽象结构， 如果一个方法的parameter传入这种抽象方法，很有可能就是一个sink点。
   * Required Permission,  调用方法需要特殊权限，Android API. PScout list(???) XD
-  
- =
-  
+ 
