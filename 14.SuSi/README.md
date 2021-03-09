@@ -47,6 +47,6 @@ SUSI采用了监督学习的方法分来训练一个分类器。使用了SVM的�
   * Dataflow to Sink, 如果一个方法从参数开始追入一个包含某些关键字的方法(update, 以sink为例)， 那么这个方法有可能就是一个潜在的sink。(对已知sink打包)
   * Data Flow to Abstract Sink, 许多硬件层面的sink通常有一层抽象结构， 如果一个方法的parameter传入这种抽象方法，很有可能就是一个sink点。
   * Required Permission,  调用方法需要特殊权限，Android API. PScout list(???) XD
- 
+ 其中，虽然“Method name”看起来很naive, 但是是与sink和source最语法相关的，当然需要和其他属性配合使用。
+ 所有的函数根据以上特征， 划分为true, false和not support
  ### D. Dataflow Features
- 
