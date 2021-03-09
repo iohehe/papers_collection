@@ -54,6 +54,12 @@ SUSI采用了监督学习的方法分来训练一个分类器。使用了SVM的�
   数据流分析通过SOOT实现的一种过程内数据流分析。考虑到数据流只是其中的一个因素， 因此， 足够了。
   * Treat all parameters of m as sources and calls to methods starting with a specific string as sinks. This can hint at m being a sink.（将形参作为source, 将调用点中包含关键字信息的callee作为sink）
   * Treat all parameters of m as sources and calls to abstract methods as sinks. This can hint at m being a sink.(将调用点中callee为抽象方法的定义为sink)
-  * Treat calls to specific methods as sources(e.g. ones that start with "read", "get", etc.) and the return value of m as the only sink. This can hint at m being a source. Optionally, parameter objects can also be treated as sinks.
-  * 
- 
+  * Treat calls to specific methods as sources(e.g. ones that start with "read", "get", etc.) and the return value of m as the only sink. This can hint at m being a source. Optionally, parameter objects can also be treated as sinks.(source是一个特殊的callee中return回来的， sink是本方法的return)
+  以上初始化定义了一个方法中，数据流追踪的起始和结束。 在听南大课的时候记得老师说过， 控制流是有规范的， 但是数据流的制定没有规范，是按照所需要的效果制定的。 可能这里的起点和终点不同，会导致最终数据流分析结果的不同。
+  初始化后，进行不动点迭代(fixed-point iteration)
+  * If the right-hand side of an assignment is tainted, the left-hand side is also tainted. (真的是...)
+  * If at least one parameter of a well-known transformer method is tainted, its result value is tainted as well.(这里比较有趣， 这里的transformer method应该是那种信息处理函数， 就是把参数进行处理后返回的)
+  * If at least one parameter of a well-known writer method is tainted, the object on which it is invoked is tainted as well. （同样有趣， 如果一个写方法的参数被污染，那么调用他的对象也被如染了(这种对象污染技术之前没太涉及过)）
+
+  * Parameter is an Interface， 如果形参是一个接口类型，通常既不是sink,又不是source（？？？接口回调机制）d可低啊
+  * Parameter is an Interface， 如果形参是一个接口类型，通常既不是sink,又不是source（？？？接口回调机制）
