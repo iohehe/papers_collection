@@ -49,4 +49,11 @@ SUSI采用了监督学习的方法分来训练一个分类器。使用了SVM的�
   * Required Permission,  调用方法需要特殊权限，Android API. PScout list(???) XD
  其中，虽然“Method name”看起来很naive, 但是是与sink和source最语法相关的，当然需要和其他属性配合使用。
  所有的函数根据以上特征， 划分为true, false和not support
+ 
  ### D. Dataflow Features
+  数据流分析通过SOOT实现的一种过程内数据流分析。考虑到数据流只是其中的一个因素， 因此， 足够了。
+  * Treat all parameters of m as sources and calls to methods starting with a specific string as sinks. This can hint at m being a sink.（将形参作为source, 将调用点中包含关键字信息的callee作为sink）
+  * Treat all parameters of m as sources and calls to abstract methods as sinks. This can hint at m being a sink.(将调用点中callee为抽象方法的定义为sink)
+  * Treat calls to specific methods as sources(e.g. ones that start with "read", "get", etc.) and the return value of m as the only sink. This can hint at m being a source. Optionally, parameter objects can also be treated as sinks.
+  * 
+ 
