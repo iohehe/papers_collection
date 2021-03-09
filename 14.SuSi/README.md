@@ -60,6 +60,13 @@ SUSI采用了监督学习的方法分来训练一个分类器。使用了SVM的�
   * If the right-hand side of an assignment is tainted, the left-hand side is also tainted. (真的是...)
   * If at least one parameter of a well-known transformer method is tainted, its result value is tainted as well.(这里比较有趣， 这里的transformer method应该是那种信息处理函数， 就是把参数进行处理后返回的)
   * If at least one parameter of a well-known writer method is tainted, the object on which it is invoked is tainted as well. （同样有趣， 如果一个写方法的参数被污染，那么调用他的对象也被如染了(这种对象污染技术之前没太涉及过)）
+  * If a method is invoked on a tainted object, its return value is tainte as well. (与上衔接， 维护了一个object tainted的结构，如果方法来自此object的调用, 那么也被taint)
+  * If a tainted value is written into a field, the whole base object becomes tainted. For arrays, the whole array becomes tainted respectively. (这里好像有些激进了， 但是好用就行, 因为这里是一个很粗粒度的，这里说的taint其实表示做污点分析， 而是通路分析。)
+  （这篇文章中， 这个数据流分析的规则是比较复杂了， 但是居然木有给算法）
+  因为这是一个特征识别操作，所以发现一条流就到达不动点了。 作者也说这个不精确，但是快
+  
+  ### E. Implicit Annotations for Virtual Dispatch
+  这一部分讲了一些inmplicict annotations, 没太看懂， 应该是同一功能方法注释如何拷贝过去的问题。
 
-  * Parameter is an Interface， 如果形参是一个接口类型，通常既不是sink,又不是source（？？？接口回调机制）d可低啊
-  * Parameter is an Interface， 如果形参是一个接口类型，通常既不是sink,又不是source（？？？接口回调机制）
+# EVALUATION
+这篇文章的评估手法是提出五个问题， 然后分别设计实验回答。
