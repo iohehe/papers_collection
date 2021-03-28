@@ -33,7 +33,19 @@
 
 ### Neighborhood discovery
 这里的neighborhood 思想基于，安全check与上下文具有很高的相关度。 如一个configure的读取，往往不会进行安全check（本地写好了的，相对安全）。而一个外部输入，如network data进到程序后往往就需要检查了。chuncky通过检测函数的使用上下文的相似性来辨认neighborhood。 前面也提到过了， 以来与API symbols. 作者使用了bag-of-words model，即自然语言处理中的词袋技术来进行识别。 将函数映射到向量空间，维度以划分
-这里的neighborhood 思想基于，安全check与上下文具有很高的相关度。 如一个configure的读取，往往不会进行安全check（本地写好了的，相对安全）。而一个外部输入，如network data进到程序后往往就需要检查了。chuncky通过检测函数的使用上下文的相似性来辨认neighborhood。 前面也提到过了， 以来与API symbols. 作者使用了bag-of-words model，即自然语言处理中的词袋技术来进行识别。 将函数映射到向量空间，维度
+这里的neighborhood 思想基于，安全check与上下文具有很高的相关度。 如一个configure的读取，往往不会进行安全check（本地写好了的，相对安全）。而一个外部输入，如network data进到程序后往往就需要检查了。chuncky通过检测函数的使用上下文的相似性来辨认neighborhood。 前面也提到过了， 以来与API symbols. 作者使用了bag-of-words model，即自然语言处理中的词袋技术来进行识别。 将函数映射到向量空间，维度系API标识符号，这样张开的空间，就能很好的将包含相同API功能的函数划分到一起。
 
+### Lightweight Tainting
+一个常规的函数，只有一部分的流同sink与source相关， 想要把相关的信息切出来,才能把不相关的check丢弃掉。为此， 此步骤进行一个lightweight tainting， 分两步：
+- Dependency modelling, 此步骤中， 将产生一个directed graph. 此图讲明一个函数中，变量间的依赖关系，这也是为啥前面需要提取Assignments(还有param)的原因。
+- Taint progagation, 沿着此图，做污点传播(可)，从source走是前向传播， 从sink走是后向传播。在函数边界处停止(过程内)，拎出与sink与source相关的数据流。
 
+### Embedding of Functions
+前面三步， 信息提取和整理齐了。此时，在进行异常探测之前需要把这些以函数为单位的信息嵌入到 向量空间。我们会将之前提取的， 与source, sink相关的条件进行规范化处理(机器学习的常规套路来了)。
+- Removal of negations， 否定移除(我还不确定)， 一些符号如<变为$CMP, 数字变为$NUM。
+- Normalization of arguments and return values, 参数与return的范化。
+将规范化的函数们嵌入到向量空间里。
 
+### Anomaly Detection
+溜了溜了
+这里的neighborhood 思想基于，安全check与上下文具有很高的相关度。 如一个configure的读取，往往不会进行安全check（本地写好了的，相对安全）。而一个外部输入，如network data进到程序后往往就需要检查了。chuncky通过检测函数的使用上下文的相似性来辨认neighborhood。 前面也提到过了， 以来与API symbols. 作者使用了bag-of-words model，即自然语言处理中的词袋技术来进行识别。 将函数映射到向量空间，维度系API标识符号，这样张开的空间，就能很好的将包含相同API功能的函数划分到一起。xing实话， 
