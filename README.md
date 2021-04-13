@@ -54,6 +54,7 @@ p. 377–392.
 42. Huang, Yao-Wen et al. “Securing web application code by static analysis and runtime protection.” WWW '04 (2004).
 43. Wassermann, Gary and Z. Su. “Sound and precise analysis of web applications for injection vulnerabilities.” PLDI '07 (2007).
 44. Huang, Yao-Wen et al. “Verifying Web applications using bounded model checking.” International Conference on Dependable Systems and Networks, 2004 (2004): 199-208.
+45.
 50. Li, Penghui. “On the Feasibility of Automated Built-in Function Modeling for PHP Symbolic Execution.” (2021).
 
 
