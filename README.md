@@ -54,6 +54,8 @@ p. 377–392.
 42. Huang, Yao-Wen et al. “Securing web application code by static analysis and runtime protection.” WWW '04 (2004).
 43. Wassermann, Gary and Z. Su. “Sound and precise analysis of web applications for injection vulnerabilities.” PLDI '07 (2007).
 44. Huang, Yao-Wen et al. “Verifying Web applications using bounded model checking.” International Conference on Dependable Systems and Networks, 2004 (2004): 199-208.
+50. Li, Penghui. “On the Feasibility of Automated Built-in Function Modeling for PHP Symbolic Execution.” (2021).
+
 
 # PHP研究线
 * 2004
@@ -119,3 +121,7 @@ p. 377–392.
 * 2018
 
    * Alhuzali, Abeer et al. “NAVEX: Precise and Scalable Exploit Generation for Dynamic Web Applications.” USENIX Security Symposium (2018)
+
+* 2021
+   * Eriksson, B. et al. “Black Widow: Blackbox Data-driven Web Scanning.” (2021).
+   * Li, Penghui. “On the Feasibility of Automated Built-in Function Modeling for PHP Symbolic Execution.” (2021).
