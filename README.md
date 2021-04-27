@@ -54,6 +54,9 @@ p. 377–392.
 42. Huang, Yao-Wen et al. “Securing web application code by static analysis and runtime protection.” WWW '04 (2004).
 43. Wassermann, Gary and Z. Su. “Sound and precise analysis of web applications for injection vulnerabilities.” PLDI '07 (2007).
 44. Huang, Yao-Wen et al. “Verifying Web applications using bounded model checking.” International Conference on Dependable Systems and Networks, 2004 (2004): 199-208.
+45.
+50. Li, Penghui. “On the Feasibility of Automated Built-in Function Modeling for PHP Symbolic Execution.” (2021).
+
 
 # PHP研究线
 * 2004
@@ -120,9 +123,15 @@ p. 377–392.
 
    * Alhuzali, Abeer et al. “NAVEX: Precise and Scalable Exploit Generation for Dynamic Web Applications.” USENIX Security Symposium (2018)
 
+<<<<<<< HEAD
 
 
 # 程序分析
 * [(IFDS)Reps, T., Sagiv, M., & Horwitz, S. (2008). Interprocedural Dataflow Analysis via Graph Reachability.](https://www.semanticscholar.org/paper/Interprocedural-Dataflow-Analysis-via-Graph-Reps-Sagiv/a396946c231c5279e97310bc2ed83703357e8c20)
 * [(95POPL)Precise interprocedural dataflow analysis via graph reachability](https://www.semanticscholar.org/paper/Precise-interprocedural-dataflow-analysis-via-graph-Reps-Horwitz/91728fca6699c2e4cadc38f629cc9f8d416db154)
 
+=======
+* 2021
+   * Eriksson, B. et al. “Black Widow: Blackbox Data-driven Web Scanning.” (2021).
+   * Li, Penghui. “On the Feasibility of Automated Built-in Function Modeling for PHP Symbolic Execution.” (2021).
+>>>>>>> 00ed9f48f8c4ea5cf94cfd624d829f2006d6e979
