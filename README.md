@@ -123,15 +123,18 @@ p. 377–392.
 
    * Alhuzali, Abeer et al. “NAVEX: Precise and Scalable Exploit Generation for Dynamic Web Applications.” USENIX Security Symposium (2018)
 
-<<<<<<< HEAD
-
-
-# 程序分析
-* [(IFDS)Reps, T., Sagiv, M., & Horwitz, S. (2008). Interprocedural Dataflow Analysis via Graph Reachability.](https://www.semanticscholar.org/paper/Interprocedural-Dataflow-Analysis-via-Graph-Reps-Sagiv/a396946c231c5279e97310bc2ed83703357e8c20)
-* [(95POPL)Precise interprocedural dataflow analysis via graph reachability](https://www.semanticscholar.org/paper/Precise-interprocedural-dataflow-analysis-via-graph-Reps-Horwitz/91728fca6699c2e4cadc38f629cc9f8d416db154)
-
-=======
 * 2021
    * Eriksson, B. et al. “Black Widow: Blackbox Data-driven Web Scanning.” (2021).
    * Li, Penghui. “On the Feasibility of Automated Built-in Function Modeling for PHP Symbolic Execution.” (2021).
->>>>>>> 00ed9f48f8c4ea5cf94cfd624d829f2006d6e979
+
+
+# 程序分析
+
+- IFDS:
+* [Reps, T., Sagiv, M., & Horwitz, S. (2008). Interprocedural Dataflow Analysis via Graph Reachability.](https://www.semanticscholar.org/paper/Interprocedural-Dataflow-Analysis-via-Graph-Reps-Sagiv/a396946c231c5279e97310bc2ed83703357e8c20)
+* [(95POPL)Precise interprocedural dataflow analysis via graph reachability](https://www.semanticscholar.org/paper/Precise-interprocedural-dataflow-analysis-via-graph-Reps-Horwitz/91728fca6699c2e4cadc38f629cc9f8d416db154)
+
+- Sea of Nodes
+* [A Simple Graph-Based Intermediate Representation](https://www.oracle.com/technetwork/java/javase/tech/c2-ir95-150110.pdf)
+* [Semantic reasoning about the sea of nodes](https://hal.inria.fr/hal-01723236/file/sea-of-nodes-hal.pdf)
+* [sea-of-nodes](https://darksi.de/d.sea-of-nodes/)
