@@ -133,15 +133,15 @@ p. 377–392.
 - SSA
 
 - Sea of Nodes
-* [A Simple Graph-Based Intermediate Representation](https://www.oracle.com/technetwork/java/javase/tech/c2-ir95-150110.pdf)
-* [Semantic reasoning about the sea of nodes](https://hal.inria.fr/hal-01723236/file/sea-of-nodes-hal.pdf)
-* [sea-of-nodes](https://darksi.de/d.sea-of-nodes/)
+  * [A Simple Graph-Based Intermediate Representation](https://www.oracle.com/technetwork/java/javase/tech/c2-ir95-150110.pdf)
+  * [Semantic reasoning about the sea of nodes](https://hal.inria.fr/hal-01723236/file/sea-of-nodes-hal.pdf)
+  * [sea-of-nodes](https://darksi.de/d.sea-of-nodes/)
 
 - IFDS:
-* [Reps, T., Sagiv, M., & Horwitz, S. (2008). Interprocedural Dataflow Analysis via Graph Reachability.](https://www.semanticscholar.org/paper/Interprocedural-Dataflow-Analysis-via-Graph-Reps-Sagiv/a396946c231c5279e97310bc2ed83703357e8c20)
-* [(95POPL)Precise interprocedural dataflow analysis via graph reachability](https://www.semanticscholar.org/paper/Precise-interprocedural-dataflow-analysis-via-graph-Reps-Horwitz/91728fca6699c2e4cadc38f629cc9f8d416db154)
+  * [Reps, T., Sagiv, M., & Horwitz, S. (2008). Interprocedural Dataflow Analysis via Graph Reachability.](https://www.semanticscholar.org/paper/Interprocedural-Dataflow-Analysis-via-Graph-Reps-Sagiv/a396946c231c5279e97310bc2ed83703357e8c20)
+  * [(95POPL)Precise interprocedural dataflow analysis via graph reachability](https://www.semanticscholar.org/paper/Precise-interprocedural-dataflow-analysis-via-graph-Reps-Horwitz/91728fca6699c2e4cadc38f629cc9f8d416db154)
 
 - Pointer Analysis
-* Anderson(流不敏感，上下文不敏感)
-* SFS(分阶段的流敏感分析算法)
-* VFG（值流图上下文敏感）
+  * Anderson(流不敏感，上下文不敏感)
+  * SFS(分阶段的流敏感分析算法)
+  * VFG（值流图上下文敏感）
