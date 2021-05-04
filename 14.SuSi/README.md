@@ -35,6 +35,7 @@ SUSI采用了监督学习的方法分来训练一个分类器。使用了SVM的�
  
  ### C. Feature Database
  抽取的参数上， SUSI选取了以下几个纬度进行的特征构建，有一些特征会在同一个维度上出现如在method name中的`method name star with get`, `method name star with put`...所以作者说由144个语法语义特征。
+ (这是大类，比如上面提到的方法名，是一个范型，然后`start with xxx`， 每种xxx算一个特征)
   * Method Name, 方法名包含或者能够头匹配一些关键字： get, put...  
   * Method has Parameters, 方法参数声明中至少包含一个形参，(sink中通常会有一个，source就不一定)
   * Return Value Type, 返回值类型，无返回的函数一般不会是source
@@ -48,8 +49,15 @@ SUSI采用了监督学习的方法分来训练一个分类器。使用了SVM的�
   * Data Flow to Abstract Sink, 许多硬件层面的sink通常有一层抽象结构， 如果一个方法的parameter传入这种抽象方法，很有可能就是一个sink点。
   * Required Permission,  调用方法需要特殊权限，Android API. PScout list(???) XD
  其中，虽然“Method name”看起来很naive, 但是是与sink和source最语法相关的，当然需要和其他属性配合使用。
- 所有的函数根据以上特征， 划分为true, false和not support
+ 所有的函数根据以上特征， 划分为true, false和not support。support是不确定该特征(比如发生在当需要检查一个方法体的时候，没有找到)。
  
+ 然后下一步进行categorizing。
+  * Class Name: 类名中的关键信息, 如"Contacts"
+  * Method Invocation:  方法调用， 如调用了一个com.android.internal.telephony方法。
+  * Body Contents: 函数体，包含特殊类型的对象，如包含了一个android，telephony.SmsManager类型的对象，可能是一个SMS_MMS分类。
+  * Parameter Type: 获取特殊类型的参数
+  * Return Value Type: 返回值
+
  ### D. Dataflow Features
   数据流分析通过SOOT实现的一种过程内数据流分析。考虑到数据流只是其中的一个因素， 因此， 足够了。
   * Treat all parameters of m as sources and calls to methods starting with a specific string as sinks. This can hint at m being a sink.（将形参作为source, 将调用点中包含关键字信息的callee作为sink）
