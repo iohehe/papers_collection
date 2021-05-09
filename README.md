@@ -145,3 +145,7 @@ p. 377–392.
   * Anderson(流不敏感，上下文不敏感)
   * SFS(分阶段的流敏感分析算法)
   * VFG（值流图上下文敏感）
+
+
+# flaw detection base on query languages and graphs![image](https://user-images.githubusercontent.com/3693435/117557074-f5809500-b0a1-11eb-910a-905ccadd86b3.png)
+
