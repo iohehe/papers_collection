@@ -147,5 +147,11 @@ p. 377–392.
   * VFG（值流图上下文敏感）
 
 
-# flaw detection base on query languages and graphs![image](https://user-images.githubusercontent.com/3693435/117557074-f5809500-b0a1-11eb-910a-905ccadd86b3.png)
-
+# flaw detection base on query languages and graphs
+## 1994
+- [Paul, S., & Prakash, A. (1994). A Framework for Source Code Search Using Program Patterns. IEEE Trans. Software Eng., 20, 463-475.](https://www.semanticscholar.org/paper/A-Framework-for-Source-Code-Search-Using-Program-Paul-Prakash/1fc0eab74218d0e09cd72db0aecf5dd13561ac2d)
+## 2005
+- [Hallem, S., Chelf, B., Xie, Y., & Engler, D. (2002). A system and language for building system-specific, static analyses. PLDI '02.](https://www.semanticscholar.org/paper/A-system-and-language-for-building-system-specific%2C-Hallem-Chelf/34f08c2907249b068c680421583c5264970eda1c)
+- [Goldsmith, S., O'Callahan, R., & Aiken, A. (2005). Relational queries over program traces. OOPSLA '05.](https://www.semanticscholar.org/paper/Relational-queries-over-program-traces-Goldsmith-O'Callahan/dbc049820f3795965c49781750804c62db8b5168)
+- [Lam, M., Whaley, J., Livshits, B., Martin, M.C., Avots, D., Carbin, M., & Unkel, C. (2005). Context-sensitive program analysis as database queries. PODS '05.](https://www.semanticscholar.org/paper/Context-sensitive-program-analysis-as-database-Lam-Whaley/1a82d7ee02a2cd64a89de20ab380c1a3addf1b2d)
+- [Martin, M.C., Livshits, B., & Lam, M. (2005). Finding application errors and security flaws using PQL: a program query language. OOPSLA '05.](https://www.semanticscholar.org/paper/Finding-application-errors-and-security-flaws-using-Martin-Livshits/0d1f5807a26286f8a486d7b535d5fc16bd37d86d)
