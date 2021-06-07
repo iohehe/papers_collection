@@ -107,6 +107,7 @@ p. 377–392.
    * Dahse, Johannes and Thorsten Holz. “Static Detection of Second-Order Vulnerabilities in Web Applications.” USENIX Security Symposium (2014).
    * Olivo, Oswaldo et al. “Detecting and Exploiting Second Order Denial-of-Service Vulnerabilities in Web Applications.” CCS '15 (2015).
    * Nunes, P. et al. “phpSAFE: A Security Analysis Tool for OOP Web Application Plugins.” 2015 45th Annual IEEE/IFIP International Conference on Dependable Systems and Networks (2015): 299-306.
+   * Alhuzali, Abeer et al. “Chainsaw: Chained Automated Workflow-based Exploit Generation.” Proceedings of the 2016 ACM SIGSAC Conference on Computer and Communications Security (2016): n. pag.
 
 
 * 2016
