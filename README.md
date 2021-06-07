@@ -119,6 +119,8 @@ p. 377–392.
 * 2017
 
    * Backes, M., Rieck, K., Skoruppa, M., Stock, B., & Yamaguchi, F. (2017). Efficient and Flexible Discovery of PHP Application Vulnerabilities. 2017 IEEE European Symposium on Security and Privacy (EuroS&P), 334-349.
+   
+   * Pellegrino, Giancarlo et al. “Deemon: Detecting CSRF with Dynamic Analysis and Property Graphs.” Proceedings of the 2017 ACM SIGSAC Conference on Computer and Communications Security (2017): n. pag.
 
 
 * 2018
