@@ -127,6 +127,10 @@ p. 377–392.
 
    * Alhuzali, Abeer et al. “NAVEX: Precise and Scalable Exploit Generation for Dynamic Web Applications.” USENIX Security Symposium (2018)
 
+* 2020
+
+  * Lee, Taek-Jin et al. “FUSE: Finding File Upload Bugs via Penetration Testing.” NDSS (2020).
+  
 * 2021
    * Eriksson, B. et al. “Black Widow: Blackbox Data-driven Web Scanning.” (2021).
    * Li, Penghui. “On the Feasibility of Automated Built-in Function Modeling for PHP Symbolic Execution.” (2021).
