@@ -100,6 +100,7 @@ p. 377–392.
 
    * Dahse, J. and T. Holz. “Simulation of Built-in PHP Features for Precise Static Code Analysis.” NDSS (2014).
    * Hauzar, David and J. Kofron. “WeVerca: Web Applications Verification for PHP.” SEFM (2014).
+   * Dahse, J. et al. “Code Reuse Attacks in PHP: Automated POP Chain Generation.” Proceedings of the 2014 ACM SIGSAC Conference on Computer and Communications Security (2014): n. pag.
 
 
 * 2015
