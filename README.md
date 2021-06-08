@@ -137,7 +137,10 @@ p. 377–392.
    * Li, Penghui. “On the Feasibility of Automated Built-in Function Modeling for PHP Symbolic Execution.” (2021).
 
 
-# JS研究线 
+# JS研究线
+
+* 2017
+   * Sun, Kwangwon and Sukyoung Ryu. “Analysis of JavaScript Programs.” ACM Computing Surveys (CSUR) 50 (2017): 1 - 34.
 
 # 程序分析
 
