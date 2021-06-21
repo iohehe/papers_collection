@@ -63,8 +63,18 @@ PHP想要触发POI需要条件有二：
 - 做法： 对每个PHP文件解析成AST， 然后在初始化阶段，每棵AST标识class与function。通常的操作流程, AST split BB, 得到CFG。对每一个BB间数据流(3.2)，最后将数据流分析的内容存在block summary。RIPS会用许多定义为class的结构体来存储一些summary,有block summaries, function summaries, file summaries,并将分析数据存储到这些suammaries中。
 
 ## 3.2 Data Flow Analysis
-对于每一个basic block, 生成
+这里就是RIPS的污点分析思路，描述了一个以basic block为单位的数据流分析方法。
 
-1. 至少又一个魔术方法BB AST，并分析其中所的assignment, 做的是内存定位。`loc:=<assigned data>` 
-1. 
-2. 
+## 3.3. OOP Analysis
+这里是在传统数据流污点分析基础上来探测POI漏洞的思路： 
+1. 从object-oriented code中搜集信息
+2. 定位objects与其中的成员属性
+3. 
+
+# 3.5 POP Chain Generation
+其实吧这篇文章关键的地方木有怎么讲， 主要在将如何在迭代数据流算法中实现object敏感和filed敏感。然后在此基础上的OOPAnalysis是在找可污染的unserializz方法，最重要的是传入后怎么跳，只有3.5短短几句。这是反序列化最最核心的地方。
+
+
+
+
+
