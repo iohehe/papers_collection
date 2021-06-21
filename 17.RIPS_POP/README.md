@@ -58,5 +58,8 @@ PHP想要触发POI需要条件有二：
 
 
 ## 3.1 High-Level Overview of Taint Analysis
-首先本质上还是做静态污点分析， 那么sinks点还是要捕捉污点链的， 后向算法: sensitive sinks->affected parameters->unsanitized sources
+首先本质上还是做静态污点分析， 那么sinks点还是要捕捉污点链的， 后向算法: sensitive sinks -> affected parameters -> unsanitized sources。
 
+- 做法： 对每个PHP文件解析成AST， 然后在初始化阶段，每棵AST标识class与function。通常的操作流程, AST split BB, 得到CFG。对每一个BB间数据流(3.2)，最后将数据流分析的内容存在block summary。
+
+- block, function, and file sunmmaries。
