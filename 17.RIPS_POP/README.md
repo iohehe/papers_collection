@@ -42,11 +42,21 @@ PHP支持将所有数据类型序列化反序列化(包括object), 序列化字�
    * S: defines a constant string in encoded format
    * O: represents an object in its serialized form.（重点，object）,一个object的属性可以是其他的object
 
+## 3. Property Oriented Programming(POP)
+PHP想要触发POI需要条件有二：
+1. 至少又一个魔术方法
+2. 选在构造的class需要在unserialize(黑暗之门:> )的作用范围内(被加载)。
 
 
 
 # 方法与挑战
-方法流程: 
+方法: 静态污点分析
+
+流程: 
 1. 搜集OO信息。
 2. 定位objects，访问其属性。 
-3. 
+
+
+## 3.1 High-Level Overview of Taint Analysis
+首先本质上还是做静态污点分析， 那么sinks点还是要捕捉污点链的， 后向算法: sensitive sinks->affected parameters->unsanitized sources
+
