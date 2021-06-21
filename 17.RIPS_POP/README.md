@@ -60,6 +60,11 @@ PHP想要触发POI需要条件有二：
 ## 3.1 High-Level Overview of Taint Analysis
 首先本质上还是做静态污点分析， 那么sinks点还是要捕捉污点链的， 后向算法: sensitive sinks -> affected parameters -> unsanitized sources。
 
-- 做法： 对每个PHP文件解析成AST， 然后在初始化阶段，每棵AST标识class与function。通常的操作流程, AST split BB, 得到CFG。对每一个BB间数据流(3.2)，最后将数据流分析的内容存在block summary。
+- 做法： 对每个PHP文件解析成AST， 然后在初始化阶段，每棵AST标识class与function。通常的操作流程, AST split BB, 得到CFG。对每一个BB间数据流(3.2)，最后将数据流分析的内容存在block summary。RIPS会用许多定义为class的结构体来存储一些summary,有block summaries, function summaries, file summaries,并将分析数据存储到这些suammaries中。
 
-- block, function, and file sunmmaries。
+## 3.2 Data Flow Analysis
+对于每一个basic block, 生成
+
+1. 至少又一个魔术方法BB AST，并分析其中所的assignment, 做的是内存定位。`loc:=<assigned data>` 
+1. 
+2. 
