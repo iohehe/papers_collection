@@ -139,8 +139,31 @@ p. 377–392.
 
 # JS研究线
 
+* 2013 
+  * Lekies, S., Stock, B., & Johns, M. (2013). 25 million flows later: large-scale detection of DOM-based XSS. Proceedings of the 2013 ACM SIGSAC conference on Computer & communications security.
+
+* 2014
+  * Stock, B., Lekies, S., Mueller, T., Spiegel, P., & Johns, M. (2014). Precise Client-side Protection against DOM-based Cross-Site Scripting. USENIX Security Symposium.
+
+* 2015
+  * Parameshwaran, I., Budianto, E., Shinde, S., Dang, H., Sadhu, A., & Saxena, P. (2015). Auto-patching DOM-based XSS at scale. Proceedings of the 2015 10th Joint Meeting on Foundations of Software Engineering.
+  * Parameshwaran, I., Budianto, E., Shinde, S., Dang, H., Sadhu, A., & Saxena, P. (2015). DexterJS: robust testing platform for DOM-based XSS vulnerabilities. Proceedings of the 2015 10th Joint Meeting on Foundations of Software Engineering.
+  
 * 2017
    * Sun, Kwangwon and Sukyoung Ryu. “Analysis of JavaScript Programs.” ACM Computing Surveys (CSUR) 50 (2017): 1 - 34.
+
+* 2018
+   * Lauinger, T., Chaabane, A., Arshad, S., Robertson, W.K., Wilson, C., & Kirda, E. (2017). Thou Shalt Not Depend on Me: Analysing the Use of Outdated JavaScript Libraries on the Web. ArXiv, abs/1811.00918.
+   * Staicu, C., Pradel, M., & Livshits, B. (2018). SYNODE: Understanding and Automatically Preventing Injection Attacks on NODE.JS. NDSS.
+
+* 2019
+  * Zimmermann, M., Staicu, C., Tenny, C., & Pradel, M. (2019). Small World with High Risks: A Study of Security Threats in the npm Ecosystem. USENIX Security Symposium.
+ 
+* 2020
+  * Chinthanet, B., Ponta, S.E., Plate, H., Sabetta, A., Kula, R., Ishio, T., & Matsumoto, K. (2020). Code-Based Vulnerability Detection in Node.js Applications: How far are we? 2020 35th IEEE/ACM International Conference on Automated Software Engineering (ASE), 1199-1203.
+
+* 2021
+ * Xiao, F., Huang, J., Xiong, Y., Yang, G., Hu, H., Gu, G., & Lee, W. (2021). Abusing Hidden Properties to Attack the Node.js Ecosystem. 
 
 # 程序分析
 
