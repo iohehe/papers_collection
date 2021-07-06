@@ -26,10 +26,17 @@
 ![image](https://user-images.githubusercontent.com/3693435/124445226-f1c37300-ddb1-11eb-8841-2097e9cc02e5.png)
 也没啥好说的，索引数组和关联数组。
 
-session就是$_SESSION,File Names就是文件名， 为啥只说文件名不说文件内容呢？ 我觉得其实文件名是比较容易被开发者missing check的一个点， 当然file_get_contents等操作也能引发二次，可能比较少见，嗯？(作者放到future work中了)。
+session就是$_SESSION,File Names就是文件名， 为啥只说文件名不说文件内容呢？ 我觉得其实文件名是比较容易被开发者missing check的一个点， 当然file_get_contents等操作也能引发二次，可能比较少见，嗯？(作者放到future work中了)
 
 
 ## Detecting Second-Order Vulnerabilities
+还是介绍了一些常见的静态分析手法。同检测OBI那篇一样，作者用了大篇幅讲述基础技术。。。
+
+使用的方法是Xie提出的三层summary的方法(basic block, function, file)， 使用后向数据流做污点分析。具体是先找块， 然后自顶向下生成块间控制流。 在块内,从return开始构建数据流， 识别五种data symbols: (Value, Variable, ArrayDimFetch, ArrayDimTree, ValueConcat, Multiple), 污点分析时，会在这些data symbols上打上sanitize标签证明数据被消毒了，另一方面，如果在分析时遇到一个user-defined function, 就去找到他并构建，依据args的不同， 实现上下文敏感的污点分析。这些都是基本污点分析，主要看作者的亮点(但是他提的很少)：
+还有一个亮点就是提出了Array Handling, 就是作者根据经验发现，往数据库写内容时， 内容的数据结构通常表现为一个数组。 这有什么用呢？ 发现一般关联数组的key就是数据表的列名，value就是对应的具体内容.
+![image](https://user-images.githubusercontent.com/3693435/124577733-1d149380-de80-11eb-837f-2aab1a9e5cff.png)
+全文的精华， 好吗， 都在这张图上了。 
+在基本的污点分析之上，作者构造了PDS层， 可以看到，在此层的帮助下， 作者提出了 PDS-centirc taint analyisis. 即以PDS层为核心去寻找污点注入。
 
 
 
