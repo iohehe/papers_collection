@@ -25,10 +25,11 @@
 这里分为了specified write 和unspecified write两种， 第一种暴露了部分字段名字，第二种没有暴露字段名，但是把字段个数(就是对应表的列数啦)暴露出来了。 再看读：
 ![image](https://user-images.githubusercontent.com/3693435/124445226-f1c37300-ddb1-11eb-8841-2097e9cc02e5.png)
 也没啥好说的，索引数组和关联数组。
-session就是$_SESSION,File Names就是文件名， 为啥只说文件名不说文件内容呢？ 我觉得其实文件名是比较容易被开发者missing check的一个点， 当然file_get_contents等操作也能引发二次，可能比较少见，嗯？。 
+
+session就是$_SESSION,File Names就是文件名， 为啥只说文件名不说文件内容呢？ 我觉得其实文件名是比较容易被开发者missing check的一个点， 当然file_get_contents等操作也能引发二次，可能比较少见，嗯？(作者放到future work中了)。
 
 
-## Session Data
+## Detecting Second-Order Vulnerabilities
 
 
 
