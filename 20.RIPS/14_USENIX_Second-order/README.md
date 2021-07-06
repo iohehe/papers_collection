@@ -37,9 +37,33 @@ session就是$_SESSION,File Names就是文件名， 为啥只说文件名不说�
 ![image](https://user-images.githubusercontent.com/3693435/124577733-1d149380-de80-11eb-837f-2aab1a9e5cff.png)
 全文的精华， 好吗， 都在这张图上了。 
 在基本的污点分析之上，作者构造了PDS层， 可以看到，在此层的帮助下， 作者提出了 PDS-centirc taint analyisis. 即以PDS层为核心去寻找污点注入。
-
+ 以数据库为例： 分为四个阶段：
+ （1.准备，从目标中尝试还原数据库表，列信息。 通过寻找.sql文件，如果没有就正则找每个PHP文件
 
 
 # 效果
 
-# 总结
+## PDS测试：
+
+![image](https://user-images.githubusercontent.com/3693435/124587040-c3b16200-de89-11eb-8d7b-fda7bc2f422b.png)
+只关心数据库中的VARCHAR和text字段。 发现其实有一半的列是不可用的。
+
+![image](https://user-images.githubusercontent.com/3693435/124587240-f9564b00-de89-11eb-86c8-bddfe7da32d4.png)
+通过手工FUZZ去测试可污染列，观察真实可污染列。 发现有一半以上是可污染的，无sanitized的占可污染列的24%.
+
+下边是session的，
+![image](https://user-images.githubusercontent.com/3693435/124587858-b5177a80-de8a-11eb-86aa-a78226fa2db9.png)
+对可污染session探测准确率很高。
+
+下边是file name 的:
+![image](https://user-images.githubusercontent.com/3693435/124587959-d24c4900-de8a-11eb-9818-d2e49dcf9e0e.png)
+准确率也很高
+
+
+## 漏洞测试:
+![image](https://user-images.githubusercontent.com/3693435/124588110-06c00500-de8b-11eb-9aef-163a56f400da.png)
+
+![image](https://user-images.githubusercontent.com/3693435/124588225-22c3a680-de8b-11eb-870c-3a38d765f92f.png)
+
+
+下边是file name 的:
