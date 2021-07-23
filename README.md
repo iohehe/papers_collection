@@ -164,6 +164,7 @@ p. 377–392.
 
 * 2021
  * Xiao, F., Huang, J., Xiong, Y., Yang, G., Hu, H., Gu, G., & Lee, W. (2021). Abusing Hidden Properties to Attack the Node.js Ecosystem. 
+ * Staicu, Cristian-Alexandru et al. “Extracting Taint Specifications for JavaScript Libraries.” 2020 IEEE/ACM 42nd International Conference on Software Engineering (ICSE) (2020): 198-209.
 
 # 程序分析
 
