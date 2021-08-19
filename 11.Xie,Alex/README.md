@@ -8,3 +8,4 @@
    
    - 对于具有这些复杂功能(complex features)的scripting language. 提出了一种三层分析(基本块内，过程内， 过程间)。通过符号执行在基本块内hook动态特性， 然后做成block summaries, 这样复杂度被分装了，在上两层中就不可见，降低了分析难度。
    
+详见： https://www.penlab.me/2020/11/14/PHP-Static-Analysis-Theory/
