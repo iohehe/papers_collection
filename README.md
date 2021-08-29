@@ -194,4 +194,7 @@ p. 377–392.
 - [Lam, M., Whaley, J., Livshits, B., Martin, M.C., Avots, D., Carbin, M., & Unkel, C. (2005). Context-sensitive program analysis as database queries. PODS '05.](https://www.semanticscholar.org/paper/Context-sensitive-program-analysis-as-database-Lam-Whaley/1a82d7ee02a2cd64a89de20ab380c1a3addf1b2d)
 - [Martin, M.C., Livshits, B., & Lam, M. (2005). Finding application errors and security flaws using PQL: a program query language. OOPSLA '05.](https://www.semanticscholar.org/paper/Finding-application-errors-and-security-flaws-using-Martin-Livshits/0d1f5807a26286f8a486d7b535d5fc16bd37d86d)
 
-# 程序分析资料
+# Black-box Web Application Scanner
+ - Doupé, Adam et al. “Enemy of the State: A State-Aware Black-Box Web Vulnerability Scanner.” USENIX Security Symposium (2012).
+ - Amankwah, Richard et al. “An empirical comparison of commercial and open‐source web vulnerability scanners.” Software: Practice and Experience 50 (2020): 1842 - 1857.
+ - Eriksson, B. et al. “Black Widow: Blackbox Data-driven Web Scanning.” 2021 IEEE Symposium on Security and Privacy (SP) (2021): 1125-1142.
