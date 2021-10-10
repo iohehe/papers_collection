@@ -54,8 +54,9 @@ p. 377–392.
 42. Huang, Yao-Wen et al. “Securing web application code by static analysis and runtime protection.” WWW '04 (2004).
 43. Wassermann, Gary and Z. Su. “Sound and precise analysis of web applications for injection vulnerabilities.” PLDI '07 (2007).
 44. Huang, Yao-Wen et al. “Verifying Web applications using bounded model checking.” International Conference on Dependable Systems and Networks, 2004 (2004): 199-208.
-45.
 50. Li, Penghui. “On the Feasibility of Automated Built-in Function Modeling for PHP Symbolic Execution.” (2021).
+61. Medeiros, I., Neves, N.F., & Correia, M.P. (2016). Detecting and Removing Web Application Vulnerabilities with Static Analysis and Data Mining. IEEE Transactions on Reliability, 65, 54-69.
+62. Huang, J., Zhang, J., Liu, J., Li, C., & Dai, R. (2021). UFuzzer: Lightweight Detection of PHP-Based Unrestricted File Upload Vulnerabilities Via Static-Fuzzing Co-Analysis. 24th International Symposium on Research in Attacks, Intrusions and Defenses.
 
 
 # PHP研究线
@@ -116,6 +117,8 @@ p. 377–392.
    * Yu, Fang et al. “Optimal sanitization synthesis for web application vulnerability repair.” ISSTA 2016 (2016).
    * Medeiros, Ibéria et al. “DEKANT: a static analysis tool that learns to detect web application vulnerabilities.” ISSTA 2016 (2016).
    * Alhuzali, Abeer et al. “Chainsaw: Chained Automated Workflow-based Exploit Generation.” Proceedings of the 2016 ACM SIGSAC Conference on Computer and Communications Security (2016): n. pag.
+   * Medeiros, I., Neves, N.F., & Correia, M.P. (2016). Detecting and Removing Web Application Vulnerabilities with Static Analysis and Data Mining. IEEE Transactions on Reliability, 65, 54-69.
+
 
 * 2017
 
@@ -135,6 +138,7 @@ p. 377–392.
 * 2021
    * Eriksson, B. et al. “Black Widow: Blackbox Data-driven Web Scanning.” (2021).
    * Li, Penghui. “On the Feasibility of Automated Built-in Function Modeling for PHP Symbolic Execution.” (2021).
+   * Huang, J., Zhang, J., Liu, J., Li, C., & Dai, R. (2021). UFuzzer: Lightweight Detection of PHP-Based Unrestricted File Upload Vulnerabilities Via Static-Fuzzing Co-Analysis. 24th International Symposium on Research in Attacks, Intrusions and Defenses.
 
 
 # JS研究线
