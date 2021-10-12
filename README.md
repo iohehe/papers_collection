@@ -57,6 +57,7 @@ p. 377–392.
 50. Li, Penghui. “On the Feasibility of Automated Built-in Function Modeling for PHP Symbolic Execution.” (2021).
 61. Medeiros, I., Neves, N.F., & Correia, M.P. (2016). Detecting and Removing Web Application Vulnerabilities with Static Analysis and Data Mining. IEEE Transactions on Reliability, 65, 54-69.
 62. Huang, J., Zhang, J., Liu, J., Li, C., & Dai, R. (2021). UFuzzer: Lightweight Detection of PHP-Based Unrestricted File Upload Vulnerabilities Via Static-Fuzzing Co-Analysis. 24th International Symposium on Research in Attacks, Intrusions and Defenses.
+63. Shar, L.K., & Tan, H.B. (2012). Automated removal of cross site scripting vulnerabilities in web applications. Inf. Softw. Technol., 54, 467-478.
 
 
 # PHP研究线
@@ -96,6 +97,9 @@ p. 377–392.
    * Yu, Fang et al. “Stranger: An Automata-Based String Analysis Tool for PHP.” TACAS (2010).
    * Jovanovic, N. et al. “Static analysis for detecting taint-style vulnerabilities in web applications.” J. Comput. Secur. 18 (2010): 861-907.
 
+
+* 2011
+   * Shar, L.K., & Tan, H.B. (2012). Automated removal of cross site scripting vulnerabilities in web applications. Inf. Softw. Technol., 54, 467-478.
 
 * 2014
 
