@@ -206,3 +206,4 @@ p. 377–392.
  - Doupé, Adam et al. “Enemy of the State: A State-Aware Black-Box Web Vulnerability Scanner.” USENIX Security Symposium (2012).
  - Amankwah, Richard et al. “An empirical comparison of commercial and open‐source web vulnerability scanners.” Software: Practice and Experience 50 (2020): 1842 - 1857.
  - Eriksson, B. et al. “Black Widow: Blackbox Data-driven Web Scanning.” 2021 IEEE Symposium on Security and Privacy (SP) (2021): 1125-1142.
+- 64. Pellegrino, G., Tschürtz, C., Bodden, E., & Rossow, C. (2015). jÄk: Using Dynamic Analysis to Crawl and Test Modern Web Applications. RAID.
