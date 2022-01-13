@@ -58,6 +58,8 @@ p. 377–392.
 61. Medeiros, I., Neves, N.F., & Correia, M.P. (2016). Detecting and Removing Web Application Vulnerabilities with Static Analysis and Data Mining. IEEE Transactions on Reliability, 65, 54-69.
 62. Huang, J., Zhang, J., Liu, J., Li, C., & Dai, R. (2021). UFuzzer: Lightweight Detection of PHP-Based Unrestricted File Upload Vulnerabilities Via Static-Fuzzing Co-Analysis. 24th International Symposium on Research in Attacks, Intrusions and Defenses.
 63. Shar, L.K., & Tan, H.B. (2012). Automated removal of cross site scripting vulnerabilities in web applications. Inf. Softw. Technol., 54, 467-478.
+64. 
+65. Park, Sunnyeo and Suman Sekhar Jana. “FUGIO: Automatic Exploit Generation for PHP Object Injection Vulnerabilities.” (2021).
 
 
 # PHP研究线
@@ -173,6 +175,7 @@ p. 377–392.
 * 2021
  * Xiao, F., Huang, J., Xiong, Y., Yang, G., Hu, H., Gu, G., & Lee, W. (2021). Abusing Hidden Properties to Attack the Node.js Ecosystem. 
  * Staicu, Cristian-Alexandru et al. “Extracting Taint Specifications for JavaScript Libraries.” 2020 IEEE/ACM 42nd International Conference on Software Engineering (ICSE) (2020): 198-209.
+ * Park, Sunnyeo and Suman Sekhar Jana. “FUGIO: Automatic Exploit Generation for PHP Object Injection Vulnerabilities.” (2021).
 
 # 程序分析
 
@@ -206,4 +209,4 @@ p. 377–392.
  - Doupé, Adam et al. “Enemy of the State: A State-Aware Black-Box Web Vulnerability Scanner.” USENIX Security Symposium (2012).
  - Amankwah, Richard et al. “An empirical comparison of commercial and open‐source web vulnerability scanners.” Software: Practice and Experience 50 (2020): 1842 - 1857.
  - Eriksson, B. et al. “Black Widow: Blackbox Data-driven Web Scanning.” 2021 IEEE Symposium on Security and Privacy (SP) (2021): 1125-1142.
-- 64. Pellegrino, G., Tschürtz, C., Bodden, E., & Rossow, C. (2015). jÄk: Using Dynamic Analysis to Crawl and Test Modern Web Applications. RAID.
+-  Pellegrino, G., Tschürtz, C., Bodden, E., & Rossow, C. (2015). jÄk: Using Dynamic Analysis to Crawl and Test Modern Web Applications. RAID.
