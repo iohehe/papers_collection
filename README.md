@@ -59,7 +59,9 @@ p. 377–392.
 62. Huang, J., Zhang, J., Liu, J., Li, C., & Dai, R. (2021). UFuzzer: Lightweight Detection of PHP-Based Unrestricted File Upload Vulnerabilities Via Static-Fuzzing Co-Analysis. 24th International Symposium on Research in Attacks, Intrusions and Defenses.
 63. Shar, L.K., & Tan, H.B. (2012). Automated removal of cross site scripting vulnerabilities in web applications. Inf. Softw. Technol., 54, 467-478.
 64. 
-65. Park, Sunnyeo and Suman Sekhar Jana. “FUGIO: Automatic Exploit Generation for PHP Object Injection Vulnerabilities.” (2021).
+65. 
+66. Park, Sunnyeo and Suman Sekhar Jana. “FUGIO: Automatic Exploit Generation for PHP Object Injection Vulnerabilities.” (2021).
+67. Calzavara, Stefano et al. “Mitch: A Machine Learning Approach to the Black-Box Detection of CSRF Vulnerabilities.” 2019 IEEE European Symposium on Security and Privacy (EuroS&P) (2019): 528-543.
 
 
 # PHP研究线
@@ -209,4 +211,10 @@ p. 377–392.
  - Doupé, Adam et al. “Enemy of the State: A State-Aware Black-Box Web Vulnerability Scanner.” USENIX Security Symposium (2012).
  - Amankwah, Richard et al. “An empirical comparison of commercial and open‐source web vulnerability scanners.” Software: Practice and Experience 50 (2020): 1842 - 1857.
  - Eriksson, B. et al. “Black Widow: Blackbox Data-driven Web Scanning.” 2021 IEEE Symposium on Security and Privacy (SP) (2021): 1125-1142.
--  Pellegrino, G., Tschürtz, C., Bodden, E., & Rossow, C. (2015). jÄk: Using Dynamic Analysis to Crawl and Test Modern Web Applications. RAID.
+ - Pellegrino, G., Tschürtz, C., Bodden, E., & Rossow, C. (2015). jÄk: Using Dynamic Analysis to Crawl and Test Modern Web Applications. RAID.
+
+# Vul: CSRF
+ - https://www.semanticscholar.org/paper/Deemon%3A-Detecting-CSRF-with-Dynamic-Analysis-and-Pellegrino-Johns/b15e942e526e4a03ecd0af31cbdf9b43bf81a829
+ - Calzavara, Stefano et al. “Mitch: A Machine Learning Approach to the Black-Box Detection of CSRF Vulnerabilities.” 2019 IEEE European Symposium on Security and Privacy (EuroS&P) (2019): 528-543.
+ - Khodayari, Soheil and Giancarlo Pellegrino. “JAW: Studying Client-side CSRF with Hybrid Property Graphs and Declarative Traversals.” USENIX Security Symposium (2021). 
+
