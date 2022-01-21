@@ -184,6 +184,7 @@ Table1给出了数据库中的VARCHAR和text字段(可污染列)的比率。 发
 ![image](https://user-images.githubusercontent.com/3693435/124587040-c3b16200-de89-11eb-8d7b-fda7bc2f422b.png)
 
 Table2对可污染列(可存储string)进行手工fuzz，观察哪些列实际可污染。发现有53%是真实可污染的，不过只有24%的真实可污染列没有被过滤(web 应用或者columns' data type).
+
 > 问题: 在发现taintable columns时发现对于大型的现代项目，通常使用loops来动态构建SQL查询，在重建时容易出错。
 本工具在发现taintable columns时70%的TP和5%的FP。
 
@@ -192,22 +193,77 @@ Table2对可污染列(可存储string)进行手工fuzz，观察哪些列实际�
 
 #### Sessions
 
-下边是session的, 为了获得一个 `ground truth` 给我们evaluation。 我们手工评估应用中所有访问的$_SESSION的key，然后手工分析能够被污染的session keys。
+下边是session的, 为了获得一个 `ground truth` 给我们evaluation。 我们手工评估应用中所有访问的$_SESSION的key，然后手工分析能够被污染的session keys。*Table 3* 显示了Session中可污染的key只包含12%。可污染session key 中的一个误报来自于从数据库中读出的一个已经消毒的邮件地址。
 
 ![image](https://user-images.githubusercontent.com/3693435/124587858-b5177a80-de8a-11eb-86aa-a78226fa2db9.png)
 
 对可污染session探测准确率很高。
 
-下边是file name 的:
 
+#### File Names
+
+ 为了探测实际中用户可控制的文件名，本文从三个方面入手: 1. 文件上传， 2. 文件创建， 3.文件重命名，在手工标记完ground truth之后，分析taintable的path，结果如*Table 4*:
+ 
 ![image](https://user-images.githubusercontent.com/3693435/124587959-d24c4900-de8a-11eb-9818-d2e49dcf9e0e.png)
 
-准确率也很高
+这里发现每个项目至少有一个创建新文件的功能。半数应用都进行了防护，改工作的方法可以把他们都找出来，有一个FP是因为OpenConf对路径敏感信息消毒了。
 
-## 漏洞测试:
+### Second-Order Vulnerabilities
+
+表5是本文工作进行二次注入漏洞挖掘效果评估，共挖到159个合法的二次注入漏洞，误报率21%。者159个漏洞中，97%是存储在数据库中的XSS，有5个是存储在SESSION中的XSS。
+
 ![image](https://user-images.githubusercontent.com/3693435/124588110-06c00500-de8b-11eb-9aef-163a56f400da.png)
 
-![image](https://user-images.githubusercontent.com/3693435/124588225-22c3a680-de8b-11eb-870c-3a38d765f92f.png)
+除了存储型XSS还有一些其他存储型注入漏洞:
+
+#### OpenConf中的Second-Order LFI to RCE
+
+![](https://penlab-1252869057.cos.ap-beijing.myqcloud.com/2022-01-21-013629.png)
+
+我们看到这里没有控制点的，但是printHeader中包含了一个$GLOBALS中变量拼接的路径，如果可控，我们就可以包含一个文件，如果文件中包含PHP代码，就可以RCE了。
+
+那么如何如染呢，我们看到`$OC_configAR[]`的键值皆来自数据库。
+
+![](https://penlab-1252869057.cos.ap-beijing.myqcloud.com/2022-01-21-015959.png)
+
+这里有一个updateConfigSetting,是用来更新程序中的配置的。而我们可用通过`$_POST`点对其进行污染。listing7第2行污染后的内容将在listing6的第6行中读出来。
+
+此时我们就可以POST一个叫做'OC——headerFile'的key。
 
 
-下边是file name 的:
+#### NewsPro Second-Order RCE
+
+![](https://penlab-1252869057.cos.ap-beijing.myqcloud.com/2022-01-21-020604.png)
+
+从Listing8的代码中可以看出来，template表中的`unp_template`字段是可污染的。
+而在listing9的unp_printTemplate()中，可以讲该内容读取出来，然后在eval中被执行。
+![](https://penlab-1252869057.cos.ap-beijing.myqcloud.com/2022-01-21-020936.png)
+
+
+### Multi-Step Exploits
+Multi-Step可以看作是second-order 的一个子类。 因为两次注入都是攻击者有意而为之的。 
+本方法成功发现了14个SQl注入和2个任意文件上传。
+
+![](https://penlab-1252869057.cos.ap-beijing.myqcloud.com/2022-01-21-022554.png)
+
+
+#### osCommerce中的Multi-Step RCE
+
+![](https://penlab-1252869057.cos.ap-beijing.myqcloud.com/2022-01-21-022818.png)
+
+此处我们可以看到，如果文件名可控那么$read_from就是一个SQLI。
+`攻击者就可以利用这个注入点向configuration表中注入任何内容(无视字段显示)`。
+
+![](https://penlab-1252869057.cos.ap-beijing.myqcloud.com/2022-01-21-024118.png)
+
+此时就可以污染这些字段进行一个RCE。
+
+
+### 误报分析
+43个误报(21%)的原因是该方法不能够探测路径敏感的sanitization(detect path-sensitive sanitization)。
+对于persistent XSS, Scarf and HotCRP通过邮件地址将可控数据存储在数据库，本方法错误的将其识别成了未消毒。
+一个user-defined sanitization function造成的路径敏感的过滤造成了29个误报！！！
+对于mulit-step exploit, HotCRP报出一个错误的SQL注入，也是由于路径敏感的sanitization没有探测到。 
+
+### 漏报分析
+分析漏报是一个error-prone task，因为目标中有多少漏洞是未知的。本工作的目标项目也没有二次注入相关的CVE。本文的方法检测之前手工标注的可污染pds点是否被发现。发现6个数据库1个session key。另外SQL parser需要被改善，miss了concat等情况。

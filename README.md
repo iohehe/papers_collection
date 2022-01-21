@@ -62,7 +62,7 @@ p. 377–392.
 65. 
 66. Park, Sunnyeo and Suman Sekhar Jana. “FUGIO: Automatic Exploit Generation for PHP Object Injection Vulnerabilities.” (2021).
 67. Calzavara, Stefano et al. “Mitch: A Machine Learning Approach to the Black-Box Detection of CSRF Vulnerabilities.” 2019 IEEE European Symposium on Security and Privacy (EuroS&P) (2019): 528-543.
-
+68. Balzarotti, D. et al. “Multi-module vulnerability analysis of web-based applications.” CCS '07 (2007).
 
 # PHP研究线
 
