@@ -151,6 +151,9 @@ p. 377–392.
 
 # JS研究线
 
+* 2009
+  * Guarnieri, Salvatore and Benjamin Livshits. “GATEKEEPER: Mostly Static Enforcement of Security and Reliability Policies for JavaScript Code.” USENIX Security Symposium (2009).
+
 * 2013 
   * Lekies, S., Stock, B., & Johns, M. (2013). 25 million flows later: large-scale detection of DOM-based XSS. Proceedings of the 2013 ACM SIGSAC conference on Computer & communications security.
 
@@ -178,6 +181,16 @@ p. 377–392.
  * Xiao, F., Huang, J., Xiong, Y., Yang, G., Hu, H., Gu, G., & Lee, W. (2021). Abusing Hidden Properties to Attack the Node.js Ecosystem. 
  * Staicu, Cristian-Alexandru et al. “Extracting Taint Specifications for JavaScript Libraries.” 2020 IEEE/ACM 42nd International Conference on Software Engineering (ICSE) (2020): 198-209.
  * Park, Sunnyeo and Suman Sekhar Jana. “FUGIO: Automatic Exploit Generation for PHP Object Injection Vulnerabilities.” (2021).
+
+
+# Java污点分析
+* 2009
+	* Tripp, O., Pistoia, M., Fink, S.J., Sridharan, M., & Weisman, O. (2009). TAJ: effective taint analysis of web applications. PLDI '09.
+* 2011
+	* Sridharan, Manu et al. “F4F: taint analysis of framework-based web applications.” OOPSLA '11 (2011).
+
+# Python
+* Lagouvardos, Sifis et al. “Static Analysis of Shape in TensorFlow Programs.” ECOOP (2020).
 
 # 程序分析
 
