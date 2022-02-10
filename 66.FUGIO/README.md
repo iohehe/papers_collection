@@ -44,7 +44,7 @@ FUGIO拿到所有程序中的信息后，生成可行的POP链并生成PUT(progr
 从上图我们可以看出FUGIO的OverView， 改工作大致分为三个阶段： 动静结合的POI漏洞分析阶段，POP链构造阶段以及POP链FUZZ。
 
 
-## POI Detector
+## 1. POI Detector
 本阶段的目的是探测POI注入点以及收集可用的gadgets元素。
 
 ## 静态分析(Static Analyszer)
@@ -57,7 +57,7 @@ FUGIO拿到所有程序中的信息后，生成可行的POP链并生成PUT(progr
 对于静态不可得的*function summaries*与*class summaries*，使用动态分析的方式获取，这些summaries为后续的POP和PUT构造提供资料。 是用`class_exists`验证哪些能够autoload的函数和方法。动态分析还会收集globals和enviroment的信息。
 
 
-## POP Chain Identifier
+## 2. POP Chain Identifier
 POP链探测，此阶段进行POP链和PUT的构造。
 
 ### POP Chain Identifier
@@ -77,16 +77,20 @@ PUT包含所有生成EXP的gadgets，对于同名class和function，都各自生
 
 对于前两个，FUGIO会在每个function entry，before and afeter conditional expression，user-defined function调用点处进行插桩记录。
 
-## POP Chain Fuzzer
+## 3. POP Chain Fuzzer
 拿到一个PUT和一条POP链，fuuzer就开始对PUT进行feedback-driven fuzzing。
 
 ![](https://penlab-1252869057.cos.ap-beijing.myqcloud.com/2022-01-25-064906.png)
 
 输入: 一个PUT和一个POP
 
-种子池中选种子， 种子编译，生成execution执行。
-进行结果分析， 如果发现了新的路径，
-
+- Line 1-3: 初始化一个种子池，种子
+- Line 5: 基于之前的执行反馈，选择一个种子并变异
+- Line 6: 基于种子，生成一个新的object
+- Line 7-8: 执行插桩后的PUT,获取反馈。得到结果
+- Line 9-10: 如果变异的种子增加了分支覆盖，fuzzer将input增加到种子池里。
+- Line 11-15: 如果发现到达一个Sink点，就报告一个PE，如果Oracle验证成功就确认为一个E。
+- Line 16 如果当前input执行的gadgets数量大于seed的，就使用input
 
 # 实验评估
 在30个PHP应用中进行FUGIO评估。其中8个应用是RIPS评估使用的，21个从PHPGGC中拿的。本工作成功发现了CVE-2018-20148，CVE-2019-6339。
@@ -94,4 +98,13 @@ PUT包含所有生成EXP的gadgets，对于同名class和function，都各自生
 ![](https://penlab-1252869057.cos.ap-beijing.myqcloud.com/2022-01-25-070802.png)
 
 上图实验数据中，第三列表示识别的POP链数量，第四列表示FUZZ能够形成EXP的，第五列是覆盖的sink点。
-Exploitable Chains表示FUZZ后生成的利用链。而Probably Exploitable Chains表示FUGIO可以生成没有通过Oracle测试的利用链。注意这两列做了五次实验，中括号是最小值到最大值，圆括号是所有不一样的链加起来。
+Exploitable Chains表示FUZZ后生成的利用链。而Probably Exploitable Chains表示FUGIO可以生成没有通过Oracle测试的利用链。注意这两列做了五次实验，中括号是最小值到最大值，圆括号是所有不一样的链加起来。True Positive Chains是Exploitable Chains和Probably Exploitable Chains加起来的手工确认的总数。最后是时间开销。
+
+- 本工作与RIPS进行对比:
+
+![](https://penlab-1252869057.cos.ap-beijing.myqcloud.com/2022-01-25-074241.png)
+
+真不易这个地方除了OWA以外，其他效果是没有RIPS好的。
+作者解解释是在Contao, Piwik和Joomla上，FUGIO没有生成Exp。
+1. 复杂的传递条件
+2. 需要特殊的OS环境
