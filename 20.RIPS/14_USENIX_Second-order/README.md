@@ -152,11 +152,10 @@ b, c的不同在于，(b)的PDS层在code analysis时已知是taintable的了,�
 > 总结：从此处看出，database操作的还原工作上，`database schmea`的还原非常重要，在unspecified写与通配符访问*，这种SQL语句找不到相关列信息的时候，都是从构建的`database schema`中寻找。
 
 #### 2. Session Keys
+对于Session Keys的分析比较简单， 因为在PHP中他就表示成了一个global variable, 因此我们**不需要对他进行markup的parser或者是构造new symobl**。 与其他数组相同， 如果一个data的symbol是$_SESSION, 他在某个block里污染了一个变量(variable)或者数组(arrayDimFetch),那么它将被记录一个写。这个记录在是全局环境的一个ArrayDimeTree(专门为session准备的)。
 
-
-#### 3. File
-
-
+#### 3. File Name
+这里的可污染文件名
 #### Multi-Step Exploits
 以SQL注入为例，静态扫描器首先标注所有受SQL注入影响的SQL写查询的表名，在污点分析时，如果后向发现一个来源是SQL查询，
 
