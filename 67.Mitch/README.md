@@ -29,8 +29,115 @@ CSRF是WEB应用中的一个常见的漏洞。这种洞的主要危害是攻击�
 
 ## 数据集构造
 收集一个请求数据集，表明哪些是敏感请求，哪些是不敏感请求。首先定义一下敏感请求：
-
+<!--  -->
 __敏感请求:__ 1. 会导致处理它的web程序与安全相关的状态改变。(如修改账户密码) 2. 一定是在已注册用户登录后的上下文中处理该表单(即用户的私有区域，如你的个人页面)。
 
 > 挑战： 只有在识别敏感请求后才能制造csrf攻击表单，而识别敏感请求的难点在于既要理解web程序的语义信息，又要观察服务器的变化
 
+针对这一挑战，构造数据集，进行敏感请求识别。
+1. 收集请求：
+    此步骤获取数据， 由于没有现成的数据集，需要自己生成，因此收集目标数据--请求。使用插件存储每一个同源站点的请求，包括： method，URL, 参数。插件区分GET,POST方法， POST需要处理body数据，通过*Content-Type*获取数据类型。
+    POST:
+
+    ```json
+                {
+                "comment": "registration", 
+                "flag": "y", 
+                "req": {
+                    "method": "POST", 
+                    "params": {
+                        "app": [
+                            "web"
+                        ], 
+                        "csrftoken": [
+                            ""
+                        ], 
+                        "email": [
+                            "<email>"
+                        ], 
+                        "fullname": [
+                            "<username>"
+                        ], 
+                        "g-recaptcha-response": [
+                            "03AO6mBfzWW1Z0QcsflroTZvgsk4eGznWsho90N30txgCrF6N0ehHlOg3BCn6kugmVALBHu9-y9jdBjCTOtgDfYM3j17_X83dKUdBFuLM2DR_Xu5quBFifxc2xzKrND7eBXd5XLW6bEj_gIRJU5KWJDDg6eG5rCCQRe0KA1fpbHF8nquipMky1XbqcXWSxmX28c3dmah50T5VQkM-mbAoSYgmHmISV4PgHmA_2LwkvCnf5BKfA5hOTgVtT3nqlG8H79GegdlPzQbiAWUl-hyN6iZHpz9mBYsSLL6_fuZQo7pyFd1iGxJ_IbLsuoi5srpN7xMpm8-jaaS-m"
+                        ], 
+                        "next": [
+                            "", 
+                            "https://9gag.com/"
+                        ], 
+                        "password": [
+                            "<password>"
+                        ], 
+                        "ref": [
+                            ""
+                        ], 
+                        "src": [
+                            ""
+                        ], 
+                        "tzo": [
+                            "1"
+                        ]
+                    }, 
+                    "reqId": "36205", 
+                    "url": "https://9gag.com/member/email-signup"
+                }
+    ```
+
+    GET:
+
+```json
+        {
+            "comment": "", 
+            "flag": "n", 
+            "req": {
+                "method": "GET", 
+                "params": {
+                    "includeReadState": [
+                        "1"
+                    ]
+                }, 
+                "reqId": "36250", 
+                "url": "https://9gag.com/notifications"
+            }
+        }
+```
+
+2. 数据标注：将一个网站$w$中的所有请求先设置为insensitive, 手工对进行web application语义的理解进行敏感标注(如上传图片的请求， liking content的请求)。 
+
+本文数据量6，312个达标的请求，洗掉了除了GET与POST的所有请求。洗掉7.7%留下了5,828个请求，其中敏感请求939个。
+
+![](https://penlab-1252869057.cos.ap-beijing.myqcloud.com/2022-02-18-122339.png)
+
+## 特征工程
+有了dataset之后我们需要进行特征工程，根据需求不同，选择模型不同，我们需要找出合适的刻画我们需要解决问题的特征集合。
+解决这个问题，通常需要我们的领域知识。 
+
+本工作的特征空间$x$由49个维度构成，分为三个大类: *Structural*, *Textual*, *Functional*.
+
+1. Structural: 结构维度的特征
+    - numOfParams: 参数总个数个数
+    - numOfBools: 绑定bool的参数
+    - numOfIds: 绑定identifier的参数
+    - numOfBlobs: 绑定blob的参数
+    - reqLen: 请求中characters总数，包括parameter names和values.
+
+![](https://penlab-1252869057.cos.ap-beijing.myqcloud.com/2022-02-18-124643.png)
+
+2. Texual: 文本维度的特征, 这个比较多，依赖于经验化的关键字。主要两部分
+   - wordInPath, where word $\in$ V, 表明这个关键字在请求路径中
+   - wordInParams, where word $\in$ V, 表明这个关键字在参数名中
+
+![](https://penlab-1252869057.cos.ap-beijing.myqcloud.com/2022-02-18-125040.png)
+
+3. Functional: This category of features indicates the HTTP method associated to the request. We consider just the following two binary features:
+- isGET: the HTTP request method is GET
+- isPOST: the HTTP request method is POST
+
+![](https://penlab-1252869057.cos.ap-beijing.myqcloud.com/2022-02-18-130129.png)
+
+可以看到大部分是GET
+## Data Exploration
+现在有了数据集，也提好了特征，在训练机器学习模型之前，先行以下数据集分析，来看看我们数据集的准确性。
+1. 结构验证(Structural), 对于这个维度的特征，使用numOfParams(参数个数)与reqLen(请求字符数)这个特征进行分布验证。我们来看两个箱图：
+
+![](https://penlab-1252869057.cos.ap-beijing.myqcloud.com/2022-02-19-032346.png)
