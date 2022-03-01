@@ -54,6 +54,11 @@ p. 377–392.
 42. Huang, Yao-Wen et al. “Securing web application code by static analysis and runtime protection.” WWW '04 (2004).
 43. Wassermann, Gary and Z. Su. “Sound and precise analysis of web applications for injection vulnerabilities.” PLDI '07 (2007).
 44. Huang, Yao-Wen et al. “Verifying Web applications using bounded model checking.” International Conference on Dependable Systems and Networks, 2004 (2004): 199-208.
+45. Li, Yue, Tian Tan and Jingling Xue. “Understanding and Analyzing Java Reflection.” ACM Transactions on Software Engineering and Methodology (TOSEM) 28 (2016): 1 - 50.
+46. Hooimeijer, Pieter, Benjamin Livshits, David A. Molnar, P. Saxena and Margus Veanes. “Fast and Precise Sanitizer Analysis with BEK.” USENIX Security Symposium (2011).
+47. Späth, Johannes, Karim Ali and Eric Bodden. “Context-, flow-, and field-sensitive data-flow analysis using synchronized Pushdown systems.” Proceedings of the ACM on Programming Languages 3 (2019): 1 - 29.
+48. Bian, Pan, Bin Liang, Jianjun Huang, Wenchang Shi, Xidong Wang and Jian Zhang. “SinkFinder: harvesting hundreds of unknown interesting function pairs with just one seed.” Proceedings of the 28th ACM Joint Meeting on European Software Engineering Conference and Symposium on the Foundations of Software Engineering (2020): n. pag.
+49. Schuckert, Felix, Basel Katt and Hanno Langweg. “Difficult SQLi Code Patterns for Static Code Analysis Tools.” (2020).
 50. Li, Penghui. “On the Feasibility of Automated Built-in Function Modeling for PHP Symbolic Execution.” (2021).
 51. Livshits, Benjamin, Aditya V. Nori, Sriram K. Rajamani and Anindya Banerjee. “Merlin: specification inference for explicit information flow problems.” PLDI '09 (2009).
 52. Shcherbakov, Mikhail and Musard Balliu. “SerialDetector: Principled and Practical Exploration of Object Injection Vulnerabilities for the Web.” NDSS (2021).
