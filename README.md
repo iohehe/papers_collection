@@ -75,6 +75,7 @@ p. 377–392.
 * 2005
 
    * Xie, Y. and A. Aiken. “Static Detection of Security Vulnerabilities in Scripting Languages.” USENIX Security Symposium (2006). 
+   * Minamide, Yasuhiko. “Static approximation of dynamically generated Web pages.” WWW '05 (2005).
    * Jovanovic, N. et al. “Pixy: a static analysis tool for detecting Web application vulnerabilities.” 2006 IEEE Symposium on Security and Privacy (S&P'06) (2006): 6 pp.-263.
    * Nguyen-Tuong, Anh et al. “Automatically Hardening Web Applications Using Precise Tainting.” SEC (2005).
 
