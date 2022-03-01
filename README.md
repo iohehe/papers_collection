@@ -55,11 +55,21 @@ p. 377–392.
 43. Wassermann, Gary and Z. Su. “Sound and precise analysis of web applications for injection vulnerabilities.” PLDI '07 (2007).
 44. Huang, Yao-Wen et al. “Verifying Web applications using bounded model checking.” International Conference on Dependable Systems and Networks, 2004 (2004): 199-208.
 50. Li, Penghui. “On the Feasibility of Automated Built-in Function Modeling for PHP Symbolic Execution.” (2021).
+51. Livshits, Benjamin, Aditya V. Nori, Sriram K. Rajamani and Anindya Banerjee. “Merlin: specification inference for explicit information flow problems.” PLDI '09 (2009).
+52. Shcherbakov, Mikhail and Musard Balliu. “SerialDetector: Principled and Practical Exploration of Object Injection Vulnerabilities for the Web.” NDSS (2021).
+53. Minamide, Yasuhiko. “Static approximation of dynamically generated Web pages.” WWW '05 (2005).
+54. Lee, Taekjin, Seongil Wi, Suyoung Lee and Sooel Son. “FUSE: Finding File Upload Bugs via Penetration Testing.” NDSS (2020).
+55. Lekies, Sebastian, Krzysztof Kotowicz, Samuel Groß, Eduardo A. Vela Nava and Martin Johns. “Code-Reuse Attacks for the Web: Breaking Cross-Site Scripting Mitigations via Script Gadgets.” Proceedings of the 2017 ACM SIGSAC Conference on Computer and Communications Security (2017): n. pag.
+56. Rahaman, Sazzadur, Ya Xiao, Sharmin Afrose, Fahad Shaon, Ke Tian, Miles Frantz, Murat Kantarcioglu and Danfeng Daphne Yao. “CryptoGuard: High Precision Detection of Cryptographic Vulnerabilities in Massive-sized Java Projects.” Proceedings of the 2019 ACM SIGSAC Conference on Computer and Communications Security (2019): n. pag.
+57. Li, Penghui and Wei Meng. “LChecker: Detecting Loose Comparison Bugs in PHP.” Proceedings of the Web Conference 2021 (2021): n. pag.
+58. Li, Z., Deqing Zou, Shouhuai Xu, Xinyu Ou, Hai Jin, Sujuan Wang, Zhijun Deng and Yuyi Zhong. “VulDeePecker: A Deep Learning-Based System for Vulnerability Detection.” ArXiv abs/1801.01681 (2018): n. pag.
+59. Pellegrino, Giancarlo, Martin Johns, Simon Koch, Michael Backes and Christian Rossow. “Deemon: Detecting CSRF with Dynamic Analysis and Property Graphs.” Proceedings of the 2017 ACM SIGSAC Conference on Computer and Communications Security (2017): n. pag.
+60. Yang, Kevin K., Zachary Wu and Frances H. Arnold. “Machine-learning-guided directed evolution for protein engineering.” Nature Methods (2019): 1-8.
 61. Medeiros, I., Neves, N.F., & Correia, M.P. (2016). Detecting and Removing Web Application Vulnerabilities with Static Analysis and Data Mining. IEEE Transactions on Reliability, 65, 54-69.
 62. Huang, J., Zhang, J., Liu, J., Li, C., & Dai, R. (2021). UFuzzer: Lightweight Detection of PHP-Based Unrestricted File Upload Vulnerabilities Via Static-Fuzzing Co-Analysis. 24th International Symposium on Research in Attacks, Intrusions and Defenses.
 63. Shar, L.K., & Tan, H.B. (2012). Automated removal of cross site scripting vulnerabilities in web applications. Inf. Softw. Technol., 54, 467-478.
-64. 
-65. 
+64. Pellegrino, Giancarlo, Constantin Tschürtz, Eric Bodden and Christian Rossow. “jÄk: Using Dynamic Analysis to Crawl and Test Modern Web Applications.” RAID (2015).
+65. Zhang, Hang, Weiteng Chen, Yu Hao, Guoren Li, Yizhuo Zhai, Xiaocheng Zou and Zhiyun Qian. “Statically Discovering High-Order Taint Style Vulnerabilities in OS Kernels.” Proceedings of the 2021 ACM SIGSAC Conference on Computer and Communications Security (2021): n. pag. 
 66. Park, Sunnyeo and Suman Sekhar Jana. “FUGIO: Automatic Exploit Generation for PHP Object Injection Vulnerabilities.” (2021).
 67. Calzavara, Stefano et al. “Mitch: A Machine Learning Approach to the Black-Box Detection of CSRF Vulnerabilities.” 2019 IEEE European Symposium on Security and Privacy (EuroS&P) (2019): 528-543.
 68. Balzarotti, D. et al. “Multi-module vulnerability analysis of web-based applications.” CCS '07 (2007).
@@ -201,9 +211,9 @@ p. 377–392.
 
 
 # 程序分析技术
-
+- taint analysis 
+  * Denning, Dorothy E.. “A lattice model of secure information flow.” Commun. ACM 19 (1976): 236-243.
 - SSA
-
 - Sea of Nodes
   * [A Simple Graph-Based Intermediate Representation](https://www.oracle.com/technetwork/java/javase/tech/c2-ir95-150110.pdf)
   * [Semantic reasoning about the sea of nodes](https://hal.inria.fr/hal-01723236/file/sea-of-nodes-hal.pdf)
