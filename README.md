@@ -1,4 +1,4 @@
-#
+# Papers
 ------------------------
 1. Jovanovic N, Kruegel C, Kirda E. Pixy: A static analysis tool for detecting web application vulnerabilities.
 In: 2006 IEEE Symposium on Security and Privacy (S&P’06). IEEE; 2006. p. 6–pp.
@@ -160,9 +160,14 @@ p. 377–392.
   * Lee, Taek-Jin et al. “FUSE: Finding File Upload Bugs via Penetration Testing.” NDSS (2020).
   
 * 2021
+
    * Eriksson, B. et al. “Black Widow: Blackbox Data-driven Web Scanning.” (2021).
    * Li, Penghui. “On the Feasibility of Automated Built-in Function Modeling for PHP Symbolic Execution.” (2021).
    * Huang, J., Zhang, J., Liu, J., Li, C., & Dai, R. (2021). UFuzzer: Lightweight Detection of PHP-Based Unrestricted File Upload Vulnerabilities Via Static-Fuzzing Co-Analysis. 24th International Symposium on Research in Attacks, Intrusions and Defenses.
+
+* 2022
+
+   * Park, Sunnyeo and Suman Sekhar Jana. “FUGIO: Automatic Exploit Generation for PHP Object Injection Vulnerabilities.” (2021).
 
 
 # JS研究线
