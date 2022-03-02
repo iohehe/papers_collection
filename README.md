@@ -116,7 +116,7 @@ p. 377–392.
 
    * Yu, Fang et al. “Stranger: An Automata-Based String Analysis Tool for PHP.” TACAS (2010).
    * Jovanovic, N. et al. “Static analysis for detecting taint-style vulnerabilities in web applications.” J. Comput. Secur. 18 (2010): 861-907.
-
+   * S. Artzi, A. Kiezun, J. Dolby, F. Tip, D. Dig, A. Paradkar, and M. D. Ernst. Finding Bugs in Web Applications Using Dynamic TestGeneration and Explicit-State Model Checking. IEEE Trans. Softw. Eng., 36(4), 2010.
 
 * 2011
    * Shar, L.K., & Tan, H.B. (2012). Automated removal of cross site scripting vulnerabilities in web applications. Inf. Softw. Technol., 54, 467-478.
@@ -177,6 +177,7 @@ p. 377–392.
 
 * 2013 
   * Lekies, S., Stock, B., & Johns, M. (2013). 25 million flows later: large-scale detection of DOM-based XSS. Proceedings of the 2013 ACM SIGSAC conference on Computer & communications security.
+  * Ramalingam, Dillibabu. “A Tool for Finding Bugs in Web Applications.” (2013).
 
 * 2014
   * Stock, B., Lekies, S., Mueller, T., Spiegel, P., & Johns, M. (2014). Precise Client-side Protection against DOM-based Cross-Site Scripting. USENIX Security Symposium.
