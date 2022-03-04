@@ -214,7 +214,7 @@ p. 377–392.
 * Lagouvardos, Sifis et al. “Static Analysis of Shape in TensorFlow Programs.” ECOOP (2020).
 
 
-# Code Mining技术
+# Code Mining
 * Hong, C. (2009). Survey on applications of software source code mining. Journal of Computer Applications.
 * Zhao-hui, Liang and Moems Key. “Survey on Data Processing in Code Mining.” Journal of Chinese Computer Systems (2010): n. pag.
 * Dyer, R., Rajan, H., & Nguyen, T.N. (2013). Declarative visitors to ease fine-grained source code mining with full history on billions of AST nodes. GPCE.
