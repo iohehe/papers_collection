@@ -79,7 +79,10 @@ p. 377–392.
 67. Calzavara, Stefano et al. “Mitch: A Machine Learning Approach to the Black-Box Detection of CSRF Vulnerabilities.” 2019 IEEE European Symposium on Security and Privacy (EuroS&P) (2019): 528-543.
 68. Balzarotti, D. et al. “Multi-module vulnerability analysis of web-based applications.” CCS '07 (2007).
 69. Shar, Lwin Khin, Lionel Claude Briand and Hee Beng Kuan Tan. “Web Application Vulnerability Prediction Using Hybrid Program Analysis and Machine Learning.” IEEE Transactions on Dependable and Secure Computing 12 (2015): 688-707.
-70. 
+70. Perl, H., Dechand, S., Smith, M., Arp, D., Yamaguchi, F., Rieck, K., Fahl, S., & Acar, Y.G. (2015). VCCFinder: Finding Potential Vulnerabilities in Open-Source Projects to Assist Code Audits. Proceedings of the 22nd ACM SIGSAC Conference on Computer and Communications Security.
+71. Yamaguchi, F., Lottmann, M., & Rieck, K. (2012). Generalized vulnerability extrapolation using abstract syntax trees. ACSAC '12.
+72. Chibotaru, V., Bichsel, B., Raychev, V., & Vechev, M.T. (2019). Scalable taint specification inference with big code. Proceedings of the 40th ACM SIGPLAN Conference on Programming Language Design and Implementation.
+
 
 # PHP研究线
 
