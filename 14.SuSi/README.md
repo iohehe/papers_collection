@@ -1,3 +1,7 @@
+Susi is a work that uses SVM to find specifications in Android. 
+To reach this goal, the author uses 144 syntactic and semantic features for classifying the Android methods.
+
+Susi's implementation is bassed on Weka, and use a train
 # INTRO 
 这片文章发表在14年的NDSS， 引用率很高， 主要是用了SVM（支持向量机）来在Android中区分sink点和source点。
 文章主要是针对Android引入的一些API进行Sink， source分类， 测试目标主要是敏感信息类的漏洞。
@@ -78,3 +82,8 @@ SUSI采用了监督学习的方法分来训练一个分类器。使用了SVM的�
 
 # EVALUATION
 这篇文章的评估手法是提出五个问题， 然后分别设计实验回答。
+1. SUSI能够找到sources和sinks吗？
+2. SUSI能对sources和sinks进行分类吗？
+3. 哪些sources和sinks用在malware apps上呢?
+4. source, sink如何随着Android版本改变的。Susi能在信息版本上找到之前没有的source/sink吗？
+5. 现有Android分析工具使用SUSI后效果如何？

@@ -82,6 +82,7 @@ p. 377–392.
 70. Perl, H., Dechand, S., Smith, M., Arp, D., Yamaguchi, F., Rieck, K., Fahl, S., & Acar, Y.G. (2015). VCCFinder: Finding Potential Vulnerabilities in Open-Source Projects to Assist Code Audits. Proceedings of the 22nd ACM SIGSAC Conference on Computer and Communications Security.
 71. Yamaguchi, F., Lottmann, M., & Rieck, K. (2012). Generalized vulnerability extrapolation using abstract syntax trees. ACSAC '12.
 72. Chibotaru, V., Bichsel, B., Raychev, V., & Vechev, M.T. (2019). Scalable taint specification inference with big code. Proceedings of the 40th ACM SIGPLAN Conference on Programming Language Design and Implementation.
+73. Staicu, C., Torp, M.T., Schäfer, M., Møller, A., & Pradel, M. (2020). Extracting Taint Specifications for JavaScript Libraries. 2020 IEEE/ACM 42nd International Conference on Software Engineering (ICSE), 198-209.
 
 
 # PHP研究线
