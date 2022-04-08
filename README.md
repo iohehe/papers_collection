@@ -1,24 +1,33 @@
 # Papers
-------------------------
+
+
+> | 名称                                                         | 会议  | 年份 | 作者                                         | 引用                                                         |
+> | ------------------------------------------------------------ | ----- | ---- | -------------------------------------------- | ------------------------------------------------------------ |
+> | Pixy: A static analysis tool for detecting web application vulnerabilities. | S&P   | 2006 | Jovanovic N, Kruegel C, Kirda E.             | [引用](https://www.semanticscholar.org/paper/Pixy%3A-a-static-analysis-tool-for-detecting-Web-Jovanovic-Kr%C3%BCgel/13c1e2db835a8519679046745159f1f556d8a3c6) |
+> | Generalized vulnerability extrapolation using abstract syntax trees | ACSAC | 2012 | F. Yamaguchi, M. Lottmann, and K. Rieck      | [引用](https://www.semanticscholar.org/paper/Generalized-vulnerability-extrapolation-using-trees-Yamaguchi-Lottmann/1902df7349d524ba6fb72d2a0e6a43844ece4443) |
+> | Modeling and discovering vulnerabilities with code property graphs | S&P   | 2014 | F. Yamaguchi, N. Golde, D. Arp, and K. Rieck | [引用](https://www.semanticscholar.org/paper/Modeling-and-Discovering-Vulnerabilities-with-Code-Yamaguchi-Golde/07c4549be429a52274bc0ec083bf5598a3e5c365) |
+
+
+
 1. Jovanovic N, Kruegel C, Kirda E. Pixy: A static analysis tool for detecting web application vulnerabilities.
-In: 2006 IEEE Symposium on Security and Privacy (S&P’06). IEEE; 2006. p. 6–pp.
-2.  F. Yamaguchi, M. Lottmann, and K. Rieck, “Generalized vulnerability extrapolation using abstract syntax trees,” 
-in Proceedings of the 28th Annual Computer Security Applications Conference. ACM, 2012, pp. 359–368.
+    In: 2006 IEEE Symposium on Security and Privacy (S&P’06). IEEE; 2006. p. 6–pp.
+2. F. Yamaguchi, M. Lottmann, and K. Rieck, “Generalized vulnerability extrapolation using abstract syntax trees,” 
+   in Proceedings of the 28th Annual Computer Security Applications Conference. ACM, 2012, pp. 359–368.
 3. F. Yamaguchi, N. Golde, D. Arp, and K. Rieck, “Modeling and discovering vulnerabilities with code property graphs,” 
-in Proceedings of the 35th IEEE Symposium on Security and Privacy, SP 2014, pp. 590–604, San Jose, CA, USA, May 2014.
+    in Proceedings of the 35th IEEE Symposium on Security and Privacy, SP 2014, pp. 590–604, San Jose, CA, USA, May 2014.
 4. Fabian Yamaguchi, Alwin Maier, Hugo Gascon, and Konrad Rieck. “Automatic inference of search patterns for taint-style vulnerabilities”. 
-In: Proc. IEEE Security & Privacy. 2015, pp. 797–812 (cit. on pp. 2, 65, 83, 88).
+    In: Proc. IEEE Security & Privacy. 2015, pp. 797–812 (cit. on pp. 2, 65, 83, 88).
 5. BACKES, M., RIECK, K., SKORUPPA, M., STOCK, B., AND YAMAGUCHI, F. Efficient and flexible discovery of php application vulnerabilities. 
-In Security and Privacy (EuroS&P), 2017 IEEE European Symposium on (2017), IEEE, pp. 334–349.
+    In Security and Privacy (EuroS&P), 2017 IEEE European Symposium on (2017), IEEE, pp. 334–349.
 6. Unruh, T., Shastry, B., Skoruppa, M., Maggi, F., Rieck, K., Seifert, J. P., & Yamaguchi, F. (2017). “Leveraging Flawed Tutorials for Seeding Large-Scale Web Vulnerability
-Discovery”. 
-In 11th {USENIX} Workshop on Offensive Technologies ({WOOT} 17).
+    Discovery”. 
+    In 11th {USENIX} Workshop on Offensive Technologies ({WOOT} 17).
 7. Z. Li, D. Zou, S. Xu, H. Jin, H. Qi, and J. Hu, “VulPecker: An automated vulnerability detection system based on code similarity analysis,” 
-in Proceedings of the 32nd Annual Conference on Computer
-Security Applications. ACM, 2016, pp. 201–213.
+    in Proceedings of the 32nd Annual Conference on Computer
+    Security Applications. ACM, 2016, pp. 201–213.
 8. Kangjie Lu, Aditya Pakki, Qiushi Wu Detecting Missing-Check Bugs via Semantic- and Context-Aware Criticalness and Constraints Inferences
 9. Alhuzali A, Gjomemo R, Eshete B, Venkatakrishnan V. NAVEX: Precise and Scalable Exploit Generation for Dynamic Web Applications. In: 27th USENIX Security Symposium (USENIX Security 18); 2018.
-p. 377–392.
+    p. 377–392.
 10. Y.Minamid, Static approximation of dynamically generated web pages, in WWW'05:Proceedings of the 14th International Conference on World Wide Web. New York,NY,USA: ACM Press, 2005, pp.432-441
 11. Y.Xie and A.Aiken, Static Detection of Security Vulnerabilities in Scripting Languages, http://glide.stanford.edu/yichen/research/sec.ps, 2006.
 12. Kim, Seulbae et al. “VUDDY: A Scalable Approach for Vulnerable Code Clone Discovery.” 2017 IEEE Symposium on Security and Privacy (SP) (2017): 595-614.
@@ -83,6 +92,7 @@ p. 377–392.
 71. Yamaguchi, F., Lottmann, M., & Rieck, K. (2012). Generalized vulnerability extrapolation using abstract syntax trees. ACSAC '12.
 72. Chibotaru, V., Bichsel, B., Raychev, V., & Vechev, M.T. (2019). Scalable taint specification inference with big code. Proceedings of the 40th ACM SIGPLAN Conference on Programming Language Design and Implementation.
 73. Staicu, C., Torp, M.T., Schäfer, M., Møller, A., & Pradel, M. (2020). Extracting Taint Specifications for JavaScript Libraries. 2020 IEEE/ACM 42nd International Conference on Software Engineering (ICSE), 198-209.
+74. Shahriar, H., & Haddad, H.M. (2016). Object injection vulnerability discovery based on latent semantic indexing. *Proceedings of the 31st Annual ACM Symposium on Applied Computing*.
 
 
 # PHP研究线
@@ -201,7 +211,7 @@ p. 377–392.
 
 * 2019
   * Zimmermann, M., Staicu, C., Tenny, C., & Pradel, M. (2019). Small World with High Risks: A Study of Security Threats in the npm Ecosystem. USENIX Security Symposium.
- 
+
 * 2020
   * Chinthanet, B., Ponta, S.E., Plate, H., Sabetta, A., Kula, R., Ishio, T., & Matsumoto, K. (2020). Code-Based Vulnerability Detection in Node.js Applications: How far are we? 2020 35th IEEE/ACM International Conference on Automated Software Engineering (ASE), 1199-1203.
 
@@ -265,4 +275,20 @@ p. 377–392.
  - https://www.semanticscholar.org/paper/Deemon%3A-Detecting-CSRF-with-Dynamic-Analysis-and-Pellegrino-Johns/b15e942e526e4a03ecd0af31cbdf9b43bf81a829
  - Calzavara, Stefano et al. “Mitch: A Machine Learning Approach to the Black-Box Detection of CSRF Vulnerabilities.” 2019 IEEE European Symposium on Security and Privacy (EuroS&P) (2019): 528-543.
  - Khodayari, Soheil and Giancarlo Pellegrino. “JAW: Studying Client-side CSRF with Hybrid Property Graphs and Declarative Traversals.” USENIX Security Symposium (2021). 
+
+
+
+# Vul:  Code Reuse
+
+## PHP
+
+- Shahriar, H., & Haddad, H.M. (2016). Object injection vulnerability discovery based on latent semantic indexing. *Proceedings of the 31st Annual ACM Symposium on Applied Computing*.
+- Koutroumpouchos, Nikolaos, Georgios Lavdanis, Eleni Veroni, Christoforos Ntantogian and Christos Xenakis. “ObjectMap: detecting insecure object deserialization.” *Proceedings of the 23rd Pan-Hellenic Conference on Informatics* (2019): n. pag.
+- 
+
+## JAVA
+
+- Rasheed, Shawn and Jens Dietrich. “A Hybrid Analysis to Detect Java Serialisation Vulnerabilities.” *2020 35th IEEE/ACM International Conference on Automated Software Engineering (ASE)* (2020): 1209-1213.
+
+## JS
 

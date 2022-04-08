@@ -121,5 +121,25 @@ Listring 2中给出了一个POI漏洞的利用，首先观察注入点(18)行，
 
 # 3.5 POP Chain Generation
 
-纯静态分析POP链，从unserialize()的return返回一个`object symbol`，标记在基本块上级行你数据流分析，在数据流分析的同时还要进行magic method分析。
+纯静态分析POP链，从unserialize()的return返回一个`object symbol`，标记在基本块上级数据流分析，在数据流分析的同时还要进行magic method分析。
 首先， 所有的`__wakeup()`方法被作为`initial gadgets`进行分析。如果一个object-senstive magic method被调用，所有相关的魔术方法将要被分析。所有的敏感属性
+
+# 4. EVALUATION
+本文的仿真实验在已知的POP链上进行:
+
+![](https://penlab-1252869057.cos.ap-beijing.myqcloud.com/2022-03-25-063802.png)
+
+## 4.1 POI点探测
+本工具在测试集十个项目中的八个，均发现了至少一个POI点。对POI点的寻找偶没有漏报，且意外发现之前CVE没有的POI点。本工具漏报了Wordpress和Open Web Analytics中的POI。OWA中的漏报由于对反射认识不足导致的;WP中的漏报是因为二次注入。
+## 4.2 可用gadgets
+
+![](https://penlab-1252869057.cos.ap-beijing.myqcloud.com/2022-03-25-065226.png)
+
+- set与get最多但是通常没什么用
+- destruct: 也很多因为他是上下文无关，所以很好用
+- callStatic, invoke在我们标的ground truth中没有找到
+
+
+## 4.3 POP链分析
+
+![](https://penlab-1252869057.cos.ap-beijing.myqcloud.com/2022-03-25-065859.png)

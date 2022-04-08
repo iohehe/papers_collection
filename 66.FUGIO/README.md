@@ -52,16 +52,23 @@ FUGIO拿到所有程序中的信息后，生成可行的POP链并生成PUT(progr
 静态分析工具计算 *static summaries*，每个文件出一个summaries,包含其中的function和class summaries。做法还是使用AST-Parser分析AST并分析所有的functions, classes, interfaces, and traits的definitions。 
 数据流只做了一个流不敏感的过程哪分析，从每个function或者method的parameters和属性追到body内的call-site的argument中。并将这些flow写入到summaries中。
 
+> 这里看上去去找receiver的指向关系只是过程内的分析。
+
 
 ## 动态分析(Dynamic Analyszer)
 对于静态不可得的*function summaries*与*class summaries*，使用动态分析的方式获取，这些summaries为后续的POP和PUT构造提供资料。 是用`class_exists`验证哪些能够autoload的函数和方法。动态分析还会收集globals和enviroment的信息。
 
+> 他这个地方已经对静态收集的方法做可达性判断了~
 
 ## 2. POP Chain Identifier
 POP链探测，此阶段进行POP链和PUT的构造。
 
 ### POP Chain Identifier
-本方法首先找到所有的sink点，然后分析实参判断是否可控(污点变量，属性可传入)。对于每一个sink点深度遍历所有魔术方法，生成所有可能的POP路径。然后用一颗递归树表示。
+本方法首先找到所有的sink点，然后分析实参判断是否可控(污点变量，属性可传入)。依据过程内分析是否有相应的参数或是属性可以流入其中。如果可以的话，分析的POP链的第一步就是将这些潜在可能通过POP链到达的sink纳入分析目标。
+
+作者认为，从每个魔术方法出发，去做DFS找sink是一种非常耗计算资源的做法(有点类似于前向污点分析？)。而且有环就停不了了(不能算个强连通？)
+
+因此作者这里用的是一种广度优先遍历的方法。这里相当于一个从潜在sink去后向生成POP链了。然后用一颗递归树表示。
 
 ![](https://penlab-1252869057.cos.ap-beijing.myqcloud.com/2022-01-25-034235.png)
 
@@ -108,3 +115,18 @@ Exploitable Chains表示FUZZ后生成的利用链。而Probably Exploitable Chai
 作者解解释是在Contao, Piwik和Joomla上，FUGIO没有生成Exp。
 1. 复杂的传递条件
 2. 需要特殊的OS环境
+
+
+# View
+FUGIO is a POP creation and validation tool that can generate auto exploit. This method detects POI sites in the codebase by diligent search at first, then collect all the potential available gadgets using static analysis. To check the correctness of these gadgets, FUGIO uses a dynamic way to validate that the class can be loaded. 
+
+Then FUGIO does a POP chain identifier, which is made by a sequence of gadgets that reflects a stack trace from a magic method to a sensitive sink.
+
+When attaching potential callers of the gadget(m) to each leaf,
+the chain identifier considers not only authentic callers that the adversary enforces for m via manipulating object properties.
+
+After building the call tree for each sink, the chain identifier finds the **leaf nodes** that represent magic methods. 
+
+For each identified leaf node, it computes a path to the root node, thus emitting a chain of tree nodes, each of which corresponds to a POP gadget.
+
+Before passing the identified POP chain to the next step, the chain idenitifer performs an inter-procedural data flow analysis to prune the chains that do not have any data flows from gadget properties to actual arguments of the sensitive sink,rendering it infeasible for the attacker to change these gadget that lies in this POP chain and compute inter-procedural data flows within the POP chian.
