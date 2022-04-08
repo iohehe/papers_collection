@@ -1,11 +1,18 @@
 # Papers
 
 
-> | 名称                                                         | 会议  | 年份 | 作者                                         | 引用                                                         |
-> | ------------------------------------------------------------ | ----- | ---- | -------------------------------------------- | ------------------------------------------------------------ |
-> | Pixy: A static analysis tool for detecting web application vulnerabilities. | S&P   | 2006 | Jovanovic N, Kruegel C, Kirda E.             | [引用](https://www.semanticscholar.org/paper/Pixy%3A-a-static-analysis-tool-for-detecting-Web-Jovanovic-Kr%C3%BCgel/13c1e2db835a8519679046745159f1f556d8a3c6) |
-> | Generalized vulnerability extrapolation using abstract syntax trees | ACSAC | 2012 | F. Yamaguchi, M. Lottmann, and K. Rieck      | [引用](https://www.semanticscholar.org/paper/Generalized-vulnerability-extrapolation-using-trees-Yamaguchi-Lottmann/1902df7349d524ba6fb72d2a0e6a43844ece4443) |
-> | Modeling and discovering vulnerabilities with code property graphs | S&P   | 2014 | F. Yamaguchi, N. Golde, D. Arp, and K. Rieck | [引用](https://www.semanticscholar.org/paper/Modeling-and-Discovering-Vulnerabilities-with-Code-Yamaguchi-Golde/07c4549be429a52274bc0ec083bf5598a3e5c365) |
+> | ID   | 名称                                                         | 会议        | 年份 | 作者                                                         | 引用                                                         |
+> | ---- | ------------------------------------------------------------ | ----------- | ---- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+> | 1    | Pixy: A static analysis tool for detecting web application vulnerabilities. | S&P         | 2006 | Jovanovic N, Kruegel C, Kirda E.                             | [引用](https://www.semanticscholar.org/paper/Pixy%3A-a-static-analysis-tool-for-detecting-Web-Jovanovic-Kr%C3%BCgel/13c1e2db835a8519679046745159f1f556d8a3c6) |
+> | 2    | Generalized vulnerability extrapolation using abstract syntax trees | ACSAC       | 2012 | F. Yamaguchi, M. Lottmann, and K. Rieck                      | [引用](https://www.semanticscholar.org/paper/Generalized-vulnerability-extrapolation-using-trees-Yamaguchi-Lottmann/1902df7349d524ba6fb72d2a0e6a43844ece4443) |
+> | 3    | Modeling and discovering vulnerabilities with code property graphs | S&P         | 2014 | F. Yamaguchi, N. Golde, D. Arp, and K. Rieck                 | [引用](https://www.semanticscholar.org/paper/Modeling-and-Discovering-Vulnerabilities-with-Code-Yamaguchi-Golde/07c4549be429a52274bc0ec083bf5598a3e5c365) |
+> | 4    | Automatic inference of search patterns for taint-style vulnerabilities | S&P         | 2015 | Fabian Yamaguchi, Alwin Maier, Hugo Gascon, and Konrad Rieck |                                                              |
+> | 5    | Efficient and flexible discovery of php application vulnerabilities | EuroS&P     | 2017 | BACKES, M., RIECK, K., SKORUPPA, M., STOCK, B., AND YAMAGUCHI, F. |                                                              |
+> | 6    | Leveraging Flawed Tutorials for Seeding Large-Scale Web Vulnerability Discovery | USENIX WOOT | 2017 | Unruh, T., Shastry, B., Skoruppa, M., Maggi, F., Rieck, K., Seifert, J. P., & Yamaguchi, F. |                                                              |
+> | 7    | VulPecker: An automated vulnerability detection system based on code similarity analysis | CCS         | 2016 | Z. Li, D. Zou, S. Xu, H. Jin, H. Qi, and J. Hu               |                                                              |
+> | 8    | Detecting Missing-Check Bugs via Semantic- and Context-Aware Criticalness and Constraints Inferences |             |      | Kangjie Lu, Aditya Pakki, Qiushi Wu                          |                                                              |
+> | 9    | NAVEX: Precise and Scalable Exploit Generation for Dynamic Web Applications | USENIX      | 2018 | Alhuzali A, Gjomemo R, Eshete B, Venkatakrishnan V.          |                                                              |
+> | 10   | Static approximation of dynamically generated web pages      | WWW         | 2015 | Y.Minamid                                                    |                                                              |
 
 
 
