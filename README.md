@@ -296,7 +296,3 @@
 ## JAVA
 
 - Rasheed, Shawn and Jens Dietrich. “A Hybrid Analysis to Detect Java Serialisation Vulnerabilities.” *2020 35th IEEE/ACM International Conference on Automated Software Engineering (ASE)* (2020): 1209-1213.
-
-## arXiv
-[IFDS Taint Analysis with Access Paths
-](https://arxiv.org/abs/2103.16240)

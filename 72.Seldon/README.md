@@ -12,24 +12,8 @@
 This paper is target to mine specifications into Python codebases. 
 As Python is a kind of weak type language, we cannot use some methods using in Java(Susi), and C#(Merlin). 
 
-## 3 Propagation Graphs
-### 3.1 Events and Information Flow
-### 3.2 Repressentation of Events
-### 3.3 Candidate Events and Roles
-### 3.4 Using the Propagation Graph
+Taint analysis abstracts all of the APIs into four kinds: source, sink, sanitizer and regular. The first three kinds can be called specification, because a taint analysis tool should sensitive to them. However, few tools can recognize all of the specifications in the codebase. So this is a big challenge to help these tools infer the specifications in the codebase.
 
-## 4 Learning Likely Taint Specifications
-### 4.1 Variables
-### 4.2 Linear Formulations of Information Flow
-### 4.3 Selecting Event Representations with Backoff
-### 4.4 Relaxing and Solving the Constraint System
+The main idea of this work is formulate the taint specification inference problem as a linear optimization tasks, then us to leaverage state-of-the art solvers for handling the resulting constraint system.
 
-
-## 5 Building the Propagation Graph for Python
-### 5.1 Events
-### 5.2 Capturing Information Flow
-
-## 6. Adapting a Baseline Method
-### 6.1 Merlin's Constraints
-### 6.3 Formulating the Optimization Task
-### 6.4 Propagation Graph Granularity
+ 
