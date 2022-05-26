@@ -9,11 +9,6 @@
 
 > PLDI'19
 
-This paper is target to mine specifications into Python codebases. 
-As Python is a kind of weak type language, we cannot use some methods using in Java(Susi), and C#(Merlin). 
+Seldon提出了一个用于大规模Python污点分析中specification推测的工具。 
 
-Taint analysis abstracts all of the APIs into four kinds: source, sink, sanitizer and regular. The first three kinds can be called specification, because a taint analysis tool should sensitive to them. However, few tools can recognize all of the specifications in the codebase. So this is a big challenge to help these tools infer the specifications in the codebase.
-
-The main idea of this work is formulate the taint specification inference problem as a linear optimization tasks, then us to leaverage state-of-the art solvers for handling the resulting constraint system.
-
- 
+该工具的核心idea是形式化的将污点推导学习问题刀看做是一个线性
