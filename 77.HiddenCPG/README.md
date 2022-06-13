@@ -1,5 +1,4 @@
-![image.png](https://assets.cha.fan/b1826ae1004ad7650ebc35b5af5746e195c70af4e8b1f2418cc70a0189adea09)
-
+![image.png](https://penlab-1252869057.cos.ap-beijing.myqcloud.com/2022-06-13-085252.png)
 本文发表在WWW'2021年由KAIST发表，今年USENIX上的FUGIO也是这里搞的。
 
 利用代码属性图进行漏洞挖掘是一种粗粒度(coarse-grained)的方式，这种方式只能探测到 missing sanitization check 而不能发现faulty sanitization checks。 要发现此种类型的漏洞，需要进行细粒度(fine-grained)的漏洞发现。本文通过将已知漏洞片段表示成子图，并通过代码相似度比对的方式在目标程序中寻找具有相同表达的代码片段从而发现漏洞。
