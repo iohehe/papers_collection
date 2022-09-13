@@ -212,9 +212,12 @@
   * Chinthanet, B., Ponta, S.E., Plate, H., Sabetta, A., Kula, R., Ishio, T., & Matsumoto, K. (2020). Code-Based Vulnerability Detection in Node.js Applications: How far are we? 2020 35th IEEE/ACM International Conference on Automated Software Engineering (ASE), 1199-1203.
 
 * 2021
- * Xiao, F., Huang, J., Xiong, Y., Yang, G., Hu, H., Gu, G., & Lee, W. (2021). Abusing Hidden Properties to Attack the Node.js Ecosystem. 
- * Staicu, Cristian-Alexandru et al. “Extracting Taint Specifications for JavaScript Libraries.” 2020 IEEE/ACM 42nd International Conference on Software Engineering (ICSE) (2020): 198-209.
- * Park, Sunnyeo and Suman Sekhar Jana. “FUGIO: Automatic Exploit Generation for PHP Object Injection Vulnerabilities.” (2021).
+  * Xiao, F., Huang, J., Xiong, Y., Yang, G., Hu, H., Gu, G., & Lee, W. (2021). Abusing Hidden Properties to Attack the Node.js Ecosystem. 
+  * Staicu, Cristian-Alexandru et al. “Extracting Taint Specifications for JavaScript Libraries.” 2020 IEEE/ACM 42nd International Conference on Software Engineering (ICSE) (2020): 198-209.
+  * Park, Sunnyeo and Suman Sekhar Jana. “FUGIO: Automatic Exploit Generation for PHP Object Injection Vulnerabilities.” (2021).
+
+* 2022
+  * Wi, S., Woo, S., Whang, J.J., & Son, S. (2022). HiddenCPG: Large-Scale Vulnerable Clone Detection Using Subgraph Isomorphism of Code Property Graphs. Proceedings of the ACM Web Conference 2022.
 
 
 # Java污点分析
