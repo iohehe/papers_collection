@@ -88,7 +88,7 @@
 76. Schuckert Felix, Basel Katt, and Hanno Langweg. "Diffcult SQLi Code Patterns for Static Code Analysis Tools." Norsk IKT-konferanse for forskning og utdanning. No. 3. 2020.
 77. Wi, S., Woo, S., Whang, J.J., & Son, S. (2022). HiddenCPG: Large-Scale Vulnerable Clone Detection Using Subgraph Isomorphism of Code Property Graphs. Proceedings of the ACM Web Conference 2022.
 78. Ping, C. (2017). A second-order SQL injection detection method. 2017 IEEE 2nd Information Technology, Networking, Electronic and Automation Control Conference (ITNEC), 1792-1796.
-
+79. Luo, C., Li, P., & Meng, W. (2022). TChecker: Precise Static Inter-Procedural Analysis for Detecting Taint-Style Vulnerabilities in PHP Applications. Proceedings of the 2022 ACM SIGSAC Conference on Computer and Communications Security.
 
 
 # PHP研究线
@@ -180,6 +180,7 @@
 * 2022
 
    * Park, Sunnyeo and Suman Sekhar Jana. “FUGIO: Automatic Exploit Generation for PHP Object Injection Vulnerabilities.” (2021).
+   * Luo, C., Li, P., & Meng, W. (2022). TChecker: Precise Static Inter-Procedural Analysis for Detecting Taint-Style Vulnerabilities in PHP Applications. Proceedings of the 2022 ACM SIGSAC Conference on Computer and Communications Security.
 
 
 # JS研究线
