@@ -67,7 +67,8 @@
 
    ```php
      <?php
-     <img ... src = "<?= base_url('attachments/blog_images/.$_POST['image'])?>">
+     <img ... src = "<?= base_url('attachments/blog_images/
+     							.$_POST['image'])?>">
      function base_url($uri='', $protocol=NULL) {
          ...
          return get_instance()->config->base_url($uri, $protocol);
