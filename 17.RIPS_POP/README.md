@@ -17,9 +17,9 @@
    - 第一个找自动化找POI的工具。
    - 在10个app上进行了测试, 发现30个漏洞并生成28条利用链。
 
----  
+---
 
-# PHP OBJECT INJECT(POJ)
+# PHP OBJECT INJECT(POI)
 PHP通常使用`serialization`和`deserialization`机制进行序列化和反序列化操作。 序列化会将PHP中的任何类型的数据存为统一的字符串格式，从而方便进行传输存储等。而反序列化就是序列化的反过程。由于PHP允许对任何object进行反序列化，因此攻击者就可以注入一些objects并对其属性进行任意赋值(控制)，从而劫持控制流，数据流，达到攻击效果。
 
 一个PHP对象注入发生在无消毒用户输入被反序列化的时候，而这个注入有没有危害，还需要看当前program scope中的gadgets。基于一个注入上下文，攻击者可以通过所能控制的对象属性，来触发 *魔术方法*。(一个个的自动出发的魔术方法就好像对象中的一个个中转站，来让攻击者进行code reuse)...
@@ -28,7 +28,7 @@ PHP通常使用`serialization`和`deserialization`机制进行序列化和反序
    * __construct(): 构造函数
    * __destruct(): 析构函数
    * __call(): 访问不可访问的方法是调用
-   * __callStatic(): 同__call, 静态
+   * \_\_callStatic(): 同__call, 静态
    * __get($name): 访问不可访问(或者不存在)的属性时调用
    * __set($name, $value): 不可访问属性赋值
    * __isset(): 当对不可访问属性调用isset()和empty()时调用
@@ -40,16 +40,29 @@ PHP通常使用`serialization`和`deserialization`机制进行序列化和反序
    * __set_state($porperties): objec做为var_eport()的参数时， 来确定被打印的属性。
    * __clone(): 使用clone命令时调用。
 
-其中，作者将__wakeup()和__destruct()列为`context-independent`的(只要注入该类型的Object，必会触发)， 其他像__toString()或者__call()依赖上下文的列为`context-dependent`的(需要特殊的条件才能触发)。
+其中，作者将__\_\_wakeup()__和__\_\_destruct()__列为`context-independent`的(只要注入该类型的Object，必会触发)， 其他像__toString()或者__call()依赖上下文的列为`context-dependent`的(需要特殊的条件才能触发)。
+
+其他的，根据其触发行为可分为三类：Object sensitive, Field Sensitive, 以及i'nvocation sensitive。
+
+之后细讲。
+
+
 
 ## 2. 序列化
 PHP支持将所有数据类型序列化反序列化(包括object), 序列化字符串具有统一的格式：
    * a: passed paramenter is an array, a:后边跟的数字时数组大小
+
    * i: numerical value, e.g., i:8
+
    * b: specifies a boolean value, e.g., b:0 or b:1
+
    * s: defines a constant string. s:后边跟的是字符串长度
+
    * S: defines a constant string in encoded format
+
    * O: represents an object in its serialized form.（重点，object）,一个object的属性可以是其他的object
+
+     这玩意其实只要关注O就行了，因为我们是对象注入也就是POI（PHP Object Injection）
 
 ## 3. Property Oriented Programming(POP)
 
