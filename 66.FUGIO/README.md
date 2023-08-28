@@ -30,7 +30,7 @@ FUGIO拿到所有程序中的信息后，生成可行的POP链并生成PUT(progr
     - C1-1: PHP的动态特性问题(*the dynamic nature of PHP*）使得很难确定可加载的class和他们中的gadgets, 如通过__autoload()这种奇葩函数。继续现在每个PHP项目都在用，这样就没有办法去静态分析了。因此不考虑这些动态加载的class和function会引来漏报。
 
     - C1-2: gadgets拼接空间大的问题， Listing1中，控制流跳入__destruct()后我们可以通过控制$this->object属性跳入当前环境中可利用的class所包含的所有clear()和save()中，如果随想项目的增大这个拼接POP链的空间会随指数式增长。
-     
+    
 2. `生成EXP`: EXP模块的目的是在判定出POP链的gadgets顺行后，构造一个可利用漏洞的对象。
 
     - C2-1: 大型WEB程序FUZZ起来通常比较慢，原因之一是会执行一些与POI漏洞不相关的模块。而且这些模块可能会对程序的状态产生副作用。
@@ -130,3 +130,10 @@ After building the call tree for each sink, the chain identifier finds the **lea
 For each identified leaf node, it computes a path to the root node, thus emitting a chain of tree nodes, each of which corresponds to a POP gadget.
 
 Before passing the identified POP chain to the next step, the chain idenitifer performs an inter-procedural data flow analysis to prune the chains that do not have any data flows from gadget properties to actual arguments of the sensitive sink,rendering it infeasible for the attacker to change these gadget that lies in this POP chain and compute inter-procedural data flows within the POP chian.
+
+
+
+---
+
+# 二读(2023.7.25)
+

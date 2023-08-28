@@ -278,7 +278,7 @@
 
 
 
-# Vul:  Code Reuse
+# Vul:  Code Reuse(Deserialization)
 
 ## PHP
 
@@ -289,3 +289,9 @@
 ## JAVA
 
 - Rasheed, Shawn and Jens Dietrich. “A Hybrid Analysis to Detect Java Serialisation Vulnerabilities.” *2020 35th IEEE/ACM International Conference on Automated Software Engineering (ASE)* (2020): 1209-1213.
+
+
+
+## .NET
+
+- Shcherbakov, Mikhail and Musard Balliu. “SerialDetector: Principled and Practical Exploration of Object Injection Vulnerabilities for the Web.” NDSS (2021).
