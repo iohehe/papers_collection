@@ -83,12 +83,15 @@
 71. Yamaguchi, F., Lottmann, M., & Rieck, K. (2012). Generalized vulnerability extrapolation using abstract syntax trees. ACSAC '12.
 72. Chibotaru, V., Bichsel, B., Raychev, V., & Vechev, M.T. (2019). Scalable taint specification inference with big code. Proceedings of the 40th ACM SIGPLAN Conference on Programming Language Design and Implementation.
 73. Staicu, C., Torp, M.T., Schäfer, M., Møller, A., & Pradel, M. (2020). Extracting Taint Specifications for JavaScript Libraries. 2020 IEEE/ACM 42nd International Conference on Software Engineering (ICSE), 198-209.
-74. Shahriar, H., & Haddad, H.M. (2016). Object injection vulnerability discovery based on latent semantic indexing. *Proceedings of the 31st Annual ACM Symposium on Applied Computing*.
-75. Schuckert Felix, Basel Katt, and Hanno Langweg. "Difficult XSS Code Patterns for Static Code Analysis Tools." Computer Security. Springer, Cham, 2019. 123-139.
-76. Schuckert Felix, Basel Katt, and Hanno Langweg. "Diffcult SQLi Code Patterns for Static Code Analysis Tools." Norsk IKT-konferanse for forskning og utdanning. No. 3. 2020.
+74. DeepTective 
+75. Shahriar, H., & Haddad, H.M. (2016). Object injection vulnerability discovery based on latent semantic indexing. *Proceedings of the 31st Annual ACM Symposium on Applied Computing*.
+76. Kassar, F.A., Clerici, G., Compagna, L., Balzarotti, D., & Yamaguchi, F. (2022). Testability Tarpits: the Impact of Code Patterns on the Security Testing of Web Applications. Proceedings 2022 Network and Distributed System Security Symposium.
 77. Wi, S., Woo, S., Whang, J.J., & Son, S. (2022). HiddenCPG: Large-Scale Vulnerable Clone Detection Using Subgraph Isomorphism of Code Property Graphs. Proceedings of the ACM Web Conference 2022.
+77. Schuckert Felix, Basel Katt, and Hanno Langweg. "Difficult XSS Code Patterns for Static Code Analysis Tools." Computer Security. Springer, Cham, 2019. 123-139.
+76. Schuckert Felix, Basel Katt, and Hanno Langweg. "Diffcult SQLi Code Patterns for Static Code Analysis Tools." Norsk IKT-konferanse for forskning og utdanning. No. 3. 2020.
 78. Ping, C. (2017). A second-order SQL injection detection method. 2017 IEEE 2nd Information Technology, Networking, Electronic and Automation Control Conference (ITNEC), 1792-1796.
 79. Luo, C., Li, P., & Meng, W. (2022). TChecker: Precise Static Inter-Procedural Analysis for Detecting Taint-Style Vulnerabilities in PHP Applications. Proceedings of the 2022 ACM SIGSAC Conference on Computer and Communications Security.
+80. FICS
 
 
 # PHP研究线
@@ -181,6 +184,7 @@
 
    * Park, Sunnyeo and Suman Sekhar Jana. “FUGIO: Automatic Exploit Generation for PHP Object Injection Vulnerabilities.” (2021).
    * Luo, C., Li, P., & Meng, W. (2022). TChecker: Precise Static Inter-Procedural Analysis for Detecting Taint-Style Vulnerabilities in PHP Applications. Proceedings of the 2022 ACM SIGSAC Conference on Computer and Communications Security.
+   * Kassar, F.A., Clerici, G., Compagna, L., Balzarotti, D., & Yamaguchi, F.          (2022). Testability Tarpits: the Impact of Code Patterns on the Security Testing      of Web Applications. Proceedings 2022 Network and Distributed System Security         Symposium. 
 
 
 # JS研究线
